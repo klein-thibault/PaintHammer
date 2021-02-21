@@ -1,0 +1,766 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E36E12425E199DC00ADC303 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E12325E199DC00ADC303 /* Tests_iOS.swift */; };
+		8E36E12F25E199DC00ADC303 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E12E25E199DC00ADC303 /* Tests_macOS.swift */; };
+		8E36E13125E199DC00ADC303 /* PaintHammerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */; };
+		8E36E13225E199DC00ADC303 /* PaintHammerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */; };
+		8E36E13325E199DC00ADC303 /* ProjectsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E10925E199DB00ADC303 /* ProjectsListView.swift */; };
+		8E36E13425E199DC00ADC303 /* ProjectsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E10925E199DB00ADC303 /* ProjectsListView.swift */; };
+		8E36E13525E199DC00ADC303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E36E10A25E199DB00ADC303 /* Assets.xcassets */; };
+		8E36E13625E199DC00ADC303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E36E10A25E199DB00ADC303 /* Assets.xcassets */; };
+		8E36E15525E19A8600ADC303 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 8E36E15425E19A8600ADC303 /* Models */; };
+		8E36E15725E19A8D00ADC303 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 8E36E15625E19A8D00ADC303 /* Models */; };
+		8E36E16525E19EB600ADC303 /* ProjectListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E16425E19EB600ADC303 /* ProjectListItemView.swift */; };
+		8E36E16625E19EB600ADC303 /* ProjectListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E16425E19EB600ADC303 /* ProjectListItemView.swift */; };
+		8E36E17625E1ABF000ADC303 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E17525E1ABF000ADC303 /* ProjectView.swift */; };
+		8E36E17725E1ABF000ADC303 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36E17525E1ABF000ADC303 /* ProjectView.swift */; };
+		8E525C2C25E1B8F700E0A9C0 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C2B25E1B8F700E0A9C0 /* StepView.swift */; };
+		8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C2B25E1B8F700E0A9C0 /* StepView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E36E12025E199DC00ADC303 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E36E10325E199DA00ADC303 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E36E10E25E199DC00ADC303;
+			remoteInfo = "PaintHammer (iOS)";
+		};
+		8E36E12B25E199DC00ADC303 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E36E10325E199DA00ADC303 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E36E11625E199DC00ADC303;
+			remoteInfo = "PaintHammer (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintHammerApp.swift; sourceTree = "<group>"; };
+		8E36E10925E199DB00ADC303 /* ProjectsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListView.swift; sourceTree = "<group>"; };
+		8E36E10A25E199DB00ADC303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E36E10F25E199DC00ADC303 /* PaintHammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaintHammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E36E11225E199DC00ADC303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E36E11725E199DC00ADC303 /* PaintHammer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaintHammer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E36E11925E199DC00ADC303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E36E11A25E199DC00ADC303 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		8E36E11F25E199DC00ADC303 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E36E12325E199DC00ADC303 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		8E36E12525E199DC00ADC303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E36E12A25E199DC00ADC303 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E36E12E25E199DC00ADC303 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		8E36E13025E199DC00ADC303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E36E14E25E19A5100ADC303 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = ../Models; sourceTree = "<group>"; };
+		8E36E16425E19EB600ADC303 /* ProjectListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListItemView.swift; sourceTree = "<group>"; };
+		8E36E17525E1ABF000ADC303 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		8E525C2B25E1B8F700E0A9C0 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E36E10C25E199DC00ADC303 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E15525E19A8600ADC303 /* Models in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E11425E199DC00ADC303 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E15725E19A8D00ADC303 /* Models in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E11C25E199DC00ADC303 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E12725E199DC00ADC303 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E36E10225E199DA00ADC303 = {
+			isa = PBXGroup;
+			children = (
+				8E36E14E25E19A5100ADC303 /* Models */,
+				8E36E10725E199DB00ADC303 /* Shared */,
+				8E36E11125E199DC00ADC303 /* iOS */,
+				8E36E11825E199DC00ADC303 /* macOS */,
+				8E36E12225E199DC00ADC303 /* Tests iOS */,
+				8E36E12D25E199DC00ADC303 /* Tests macOS */,
+				8E36E11025E199DC00ADC303 /* Products */,
+				8E36E15325E19A8600ADC303 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8E36E10725E199DB00ADC303 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E10A25E199DB00ADC303 /* Assets.xcassets */,
+				8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */,
+				8E36E16C25E1AB6F00ADC303 /* Project */,
+				8E36E16B25E1AB5D00ADC303 /* Projects */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8E36E11025E199DC00ADC303 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E10F25E199DC00ADC303 /* PaintHammer.app */,
+				8E36E11725E199DC00ADC303 /* PaintHammer.app */,
+				8E36E11F25E199DC00ADC303 /* Tests iOS.xctest */,
+				8E36E12A25E199DC00ADC303 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E36E11125E199DC00ADC303 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E11225E199DC00ADC303 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		8E36E11825E199DC00ADC303 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E11925E199DC00ADC303 /* Info.plist */,
+				8E36E11A25E199DC00ADC303 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		8E36E12225E199DC00ADC303 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E12325E199DC00ADC303 /* Tests_iOS.swift */,
+				8E36E12525E199DC00ADC303 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		8E36E12D25E199DC00ADC303 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E12E25E199DC00ADC303 /* Tests_macOS.swift */,
+				8E36E13025E199DC00ADC303 /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		8E36E15325E19A8600ADC303 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E36E16B25E1AB5D00ADC303 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E10925E199DB00ADC303 /* ProjectsListView.swift */,
+				8E36E16425E19EB600ADC303 /* ProjectListItemView.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		8E36E16C25E1AB6F00ADC303 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E17525E1ABF000ADC303 /* ProjectView.swift */,
+				8E525C2B25E1B8F700E0A9C0 /* StepView.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E36E10E25E199DC00ADC303 /* PaintHammer (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E36E13925E199DC00ADC303 /* Build configuration list for PBXNativeTarget "PaintHammer (iOS)" */;
+			buildPhases = (
+				8E36E10B25E199DC00ADC303 /* Sources */,
+				8E36E10C25E199DC00ADC303 /* Frameworks */,
+				8E36E10D25E199DC00ADC303 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PaintHammer (iOS)";
+			packageProductDependencies = (
+				8E36E15425E19A8600ADC303 /* Models */,
+			);
+			productName = "PaintHammer (iOS)";
+			productReference = 8E36E10F25E199DC00ADC303 /* PaintHammer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E36E11625E199DC00ADC303 /* PaintHammer (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E36E13C25E199DC00ADC303 /* Build configuration list for PBXNativeTarget "PaintHammer (macOS)" */;
+			buildPhases = (
+				8E36E11325E199DC00ADC303 /* Sources */,
+				8E36E11425E199DC00ADC303 /* Frameworks */,
+				8E36E11525E199DC00ADC303 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PaintHammer (macOS)";
+			packageProductDependencies = (
+				8E36E15625E19A8D00ADC303 /* Models */,
+			);
+			productName = "PaintHammer (macOS)";
+			productReference = 8E36E11725E199DC00ADC303 /* PaintHammer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E36E11E25E199DC00ADC303 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E36E13F25E199DC00ADC303 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				8E36E11B25E199DC00ADC303 /* Sources */,
+				8E36E11C25E199DC00ADC303 /* Frameworks */,
+				8E36E11D25E199DC00ADC303 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E36E12125E199DC00ADC303 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = 8E36E11F25E199DC00ADC303 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		8E36E12925E199DC00ADC303 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E36E14225E199DC00ADC303 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				8E36E12625E199DC00ADC303 /* Sources */,
+				8E36E12725E199DC00ADC303 /* Frameworks */,
+				8E36E12825E199DC00ADC303 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E36E12C25E199DC00ADC303 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = 8E36E12A25E199DC00ADC303 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E36E10325E199DA00ADC303 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8E36E10E25E199DC00ADC303 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					8E36E11625E199DC00ADC303 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					8E36E11E25E199DC00ADC303 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8E36E10E25E199DC00ADC303;
+					};
+					8E36E12925E199DC00ADC303 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8E36E11625E199DC00ADC303;
+					};
+				};
+			};
+			buildConfigurationList = 8E36E10625E199DA00ADC303 /* Build configuration list for PBXProject "PaintHammer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E36E10225E199DA00ADC303;
+			productRefGroup = 8E36E11025E199DC00ADC303 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E36E10E25E199DC00ADC303 /* PaintHammer (iOS) */,
+				8E36E11625E199DC00ADC303 /* PaintHammer (macOS) */,
+				8E36E11E25E199DC00ADC303 /* Tests iOS */,
+				8E36E12925E199DC00ADC303 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E36E10D25E199DC00ADC303 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E13525E199DC00ADC303 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E11525E199DC00ADC303 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E13625E199DC00ADC303 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E11D25E199DC00ADC303 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E12825E199DC00ADC303 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E36E10B25E199DC00ADC303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E16525E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
+				8E36E13325E199DC00ADC303 /* ProjectsListView.swift in Sources */,
+				8E36E17625E1ABF000ADC303 /* ProjectView.swift in Sources */,
+				8E525C2C25E1B8F700E0A9C0 /* StepView.swift in Sources */,
+				8E36E13125E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E11325E199DC00ADC303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E16625E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
+				8E36E13425E199DC00ADC303 /* ProjectsListView.swift in Sources */,
+				8E36E17725E1ABF000ADC303 /* ProjectView.swift in Sources */,
+				8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */,
+				8E36E13225E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E11B25E199DC00ADC303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E12425E199DC00ADC303 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E36E12625E199DC00ADC303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E36E12F25E199DC00ADC303 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E36E12125E199DC00ADC303 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E36E10E25E199DC00ADC303 /* PaintHammer (iOS) */;
+			targetProxy = 8E36E12025E199DC00ADC303 /* PBXContainerItemProxy */;
+		};
+		8E36E12C25E199DC00ADC303 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E36E11625E199DC00ADC303 /* PaintHammer (macOS) */;
+			targetProxy = 8E36E12B25E199DC00ADC303 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8E36E13725E199DC00ADC303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8E36E13825E199DC00ADC303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8E36E13A25E199DC00ADC303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thibaultklein.PaintHammer;
+				PRODUCT_NAME = PaintHammer;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E36E13B25E199DC00ADC303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thibaultklein.PaintHammer;
+				PRODUCT_NAME = PaintHammer;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E36E13D25E199DC00ADC303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thibaultklein.PaintHammer;
+				PRODUCT_NAME = PaintHammer;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8E36E13E25E199DC00ADC303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thibaultklein.PaintHammer;
+				PRODUCT_NAME = PaintHammer;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8E36E14025E199DC00ADC303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibaultklein.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "PaintHammer (iOS)";
+			};
+			name = Debug;
+		};
+		8E36E14125E199DC00ADC303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibaultklein.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "PaintHammer (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E36E14325E199DC00ADC303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibaultklein.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "PaintHammer (macOS)";
+			};
+			name = Debug;
+		};
+		8E36E14425E199DC00ADC303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9SXMCCRGJ3;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibaultklein.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "PaintHammer (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E36E10625E199DA00ADC303 /* Build configuration list for PBXProject "PaintHammer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E36E13725E199DC00ADC303 /* Debug */,
+				8E36E13825E199DC00ADC303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E36E13925E199DC00ADC303 /* Build configuration list for PBXNativeTarget "PaintHammer (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E36E13A25E199DC00ADC303 /* Debug */,
+				8E36E13B25E199DC00ADC303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E36E13C25E199DC00ADC303 /* Build configuration list for PBXNativeTarget "PaintHammer (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E36E13D25E199DC00ADC303 /* Debug */,
+				8E36E13E25E199DC00ADC303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E36E13F25E199DC00ADC303 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E36E14025E199DC00ADC303 /* Debug */,
+				8E36E14125E199DC00ADC303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E36E14225E199DC00ADC303 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E36E14325E199DC00ADC303 /* Debug */,
+				8E36E14425E199DC00ADC303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E36E15425E19A8600ADC303 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		8E36E15625E19A8D00ADC303 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8E36E10325E199DA00ADC303 /* Project object */;
+}
