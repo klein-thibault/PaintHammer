@@ -14,15 +14,9 @@ struct ProjectListItemView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             if let image = project.image {
-                #if os(iOS)
-                Image(uiImage: image)
+                Image(phImage: image)
                     .resizable()
                     .scaledToFit()
-                #elseif os(macOS)
-                Image(nsImage: image)
-                    .resizable()
-                    .scaledToFit()
-                #endif
             }
 
             Text(project.name)

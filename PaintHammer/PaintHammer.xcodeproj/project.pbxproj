@@ -25,6 +25,8 @@
 		8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C2B25E1B8F700E0A9C0 /* StepView.swift */; };
 		8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */; };
 		8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */; };
+		8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A457725E2D4490026F3BC /* Image+PHImage.swift */; };
+		8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		8E36E17525E1ABF000ADC303 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		8E525C2B25E1B8F700E0A9C0 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListViewModel.swift; sourceTree = "<group>"; };
+		8E6A457725E2D4490026F3BC /* Image+PHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+PHImage.swift"; sourceTree = "<group>"; };
+		8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+PHImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 		8E36E11125E199DC00ADC303 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				8E6A458325E2D4E10026F3BC /* Extensions */,
 				8E36E11225E199DC00ADC303 /* Info.plist */,
 			);
 			path = iOS;
@@ -147,6 +152,7 @@
 		8E36E11825E199DC00ADC303 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				8E6A458425E2D4E80026F3BC /* Extensions */,
 				8E36E11925E199DC00ADC303 /* Info.plist */,
 				8E36E11A25E199DC00ADC303 /* macOS.entitlements */,
 			);
@@ -211,6 +217,22 @@
 				8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		8E6A458325E2D4E10026F3BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E6A457725E2D4490026F3BC /* Image+PHImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E6A458425E2D4E80026F3BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +403,7 @@
 				8E36E17625E1ABF000ADC303 /* ProjectView.swift in Sources */,
 				8E525C2C25E1B8F700E0A9C0 /* StepView.swift in Sources */,
 				8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
+				8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */,
 				8E36E13125E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +417,7 @@
 				8E36E17725E1ABF000ADC303 /* ProjectView.swift in Sources */,
 				8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */,
 				8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
+				8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */,
 				8E36E13225E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
