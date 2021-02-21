@@ -178,8 +178,7 @@
 		8E36E16B25E1AB5D00ADC303 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				8E36E10925E199DB00ADC303 /* ProjectsListView.swift */,
-				8E36E16425E19EB600ADC303 /* ProjectListItemView.swift */,
+				8E525C3225E2CCE700E0A9C0 /* View */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -191,6 +190,15 @@
 				8E525C2B25E1B8F700E0A9C0 /* StepView.swift */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		8E525C3225E2CCE700E0A9C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E10925E199DB00ADC303 /* ProjectsListView.swift */,
+				8E36E16425E19EB600ADC303 /* ProjectListItemView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

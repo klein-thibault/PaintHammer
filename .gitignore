@@ -1,0 +1,67 @@
+# Xcode #
+
+## Build generated ##
+build/
+DerivedData
+
+## Various settings ##
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+!default.xcworkspace
+
+## Other ##
+*.idea
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific ##
+*.hmap
+*.ipa
+
+# R.swift
+*.generated.swift
+
+# CocoaPods #
+Pods/
+
+# fastlane #
+*.mobileprovision
+fastlane/.env
+fastlane/report.xml
+fastlane/Error*.png
+fastlane/Preview.html
+fastlane/screenshots/*/*-portrait.png
+fastlane/screenshots/*/*-landscape.png
+fastlane/screenshots/screenshots.html
+fastlane/screenshots/*/*-portrait_framed.png
+fastlane/screenshots/*/*-landscape_framed.png
+fastlane/README.md
+fastlane/test_output
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Capsule.app.dSYM.zip
+fastlane/.env.default
+
+.bundle/
+.env
+keys.env
+.bitrise.secrets.yml
+
+# Ignore vendor folder
+/vendor/*
