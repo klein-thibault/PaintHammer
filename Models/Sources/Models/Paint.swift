@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Paint {
-    let name: String
-    let brand: String
-    let color: PHColor
+    public let name: String
+    public let brand: String
+    public let color: PHColor
 
     public init(name: String, brand: String, color: PHColor) {
         self.name = name

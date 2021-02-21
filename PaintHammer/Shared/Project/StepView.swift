@@ -5,21 +5,32 @@
 //  Created by Thibault Klein on 2/20/21.
 //
 
+import Models
 import SwiftUI
 
 struct StepView: View {
+    var step: Step
+
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Circle()
-                    .frame(width: 40, height: 40)
-                    .foregroundColor(.red)
-                Text("Mephiston Red")
+        VStack(alignment: .leading, spacing: 10) {
+            if let paint = step.paint {
+                HStack(spacing: 20) {
+                    Circle()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(Color(paint.color))
+                        .shadow(radius: 2)
+                    Text(paint.name)
+                }
             }
-            Text("Pre-highlight with Liquitex white ink")
-            Image("step_image_example")
-                .resizable()
-                .scaledToFit()
+
+            Text(step.description)
+
+            if let image = step.image {
+                Image(phImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .shadow(radius: 10)
+            }
         }
         .padding()
     }
@@ -27,6 +38,8 @@ struct StepView: View {
 
 struct StepView_Previews: PreviewProvider {
     static var previews: some View {
-        StepView()
+        let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
+        let image = #imageLiteral(resourceName: "step_image_example")
+        StepView(step: Step(description: "Step", paint: whiteInk, image: image))
     }
 }

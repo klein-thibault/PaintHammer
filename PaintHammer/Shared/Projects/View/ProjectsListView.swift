@@ -14,7 +14,7 @@ struct ProjectsListView: View {
         NavigationView {
             VStack(spacing: 25) {
                 ForEach(viewModel.projects) { project in
-                    NavigationLink(destination: ProjectView()) {
+                    NavigationLink(destination: ProjectView(project: project)) {
                         ProjectListItemView(project: project)
                     }
                 }

@@ -7,10 +7,11 @@
 
 import Foundation
 
-public struct Step {
-    let description: String
-    let paint: Paint?
-    let image: PHImage?
+public struct Step: Identifiable {
+    public let id = UUID()
+    public let description: String
+    public let paint: Paint?
+    public let image: PHImage?
 
     public init(description: String, paint: Paint?, image: PHImage?) {
         self.description = description
