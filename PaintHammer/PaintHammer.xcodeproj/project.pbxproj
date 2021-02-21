@@ -29,6 +29,8 @@
 		8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */; };
 		8E6A458A25E2EB540026F3BC /* Color+PHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A458925E2EB540026F3BC /* Color+PHColor.swift */; };
 		8E6A459025E2EB8B0026F3BC /* Color+PHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A458F25E2EB8B0026F3BC /* Color+PHColor.swift */; };
+		8E6A45A125E2EED60026F3BC /* AddStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45A025E2EED60026F3BC /* AddStepView.swift */; };
+		8E6A45A225E2EED60026F3BC /* AddStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45A025E2EED60026F3BC /* AddStepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 		8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+PHImage.swift"; sourceTree = "<group>"; };
 		8E6A458925E2EB540026F3BC /* Color+PHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+PHColor.swift"; sourceTree = "<group>"; };
 		8E6A458F25E2EB8B0026F3BC /* Color+PHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+PHColor.swift"; sourceTree = "<group>"; };
+		8E6A45A025E2EED60026F3BC /* AddStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,7 @@
 			children = (
 				8E36E17525E1ABF000ADC303 /* ProjectView.swift */,
 				8E525C2B25E1B8F700E0A9C0 /* StepView.swift */,
+				8E6A45A025E2EED60026F3BC /* AddStepView.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -411,6 +415,7 @@
 				8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */,
 				8E36E13125E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
+				8E6A45A125E2EED60026F3BC /* AddStepView.swift in Sources */,
 				8E6A458A25E2EB540026F3BC /* Color+PHColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +431,7 @@
 				8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */,
 				8E36E13225E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
+				8E6A45A225E2EED60026F3BC /* AddStepView.swift in Sources */,
 				8E6A459025E2EB8B0026F3BC /* Color+PHColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
