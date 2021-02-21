@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct ProjectsListView: View {
+    @ObservedObject var viewModel: ProjectsListViewModel
+
     var body: some View {
         NavigationView {
             VStack(spacing: 25) {
-                NavigationLink(destination: ProjectView()) {
-                    ProjectListItemView()
-                }
-                NavigationLink(destination: ProjectView()) {
-                    ProjectListItemView()
+                ForEach(viewModel.projects) { project in
+                    NavigationLink(destination: ProjectView()) {
+                        ProjectListItemView(project: project)
+                    }
                 }
                 Spacer()
             }
             .padding()
-            .navigationBarTitle("PaintHammer")
+            .navigationTitle("PaintHammer")
+        }
+        .onAppear {
+            viewModel.loadProjects()
         }
     }
 }
@@ -28,7 +32,7 @@ struct ProjectsListView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ProjectsListView()
+            ProjectsListView(viewModel: ProjectsListViewModel())
         }
     }
 }

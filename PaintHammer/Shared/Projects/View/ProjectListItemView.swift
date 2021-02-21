@@ -5,15 +5,27 @@
 //  Created by Thibault Klein on 2/20/21.
 //
 
+import Models
 import SwiftUI
 
 struct ProjectListItemView: View {
+    var project: Project
+
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image("imperial_fists_background")
-                .resizable()
-                .scaledToFit()
-            Text("Project Name")
+            if let image = project.image {
+                #if os(iOS)
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                #elseif os(macOS)
+                Image(nsImage: image)
+                    .resizable()
+                    .scaledToFit()
+                #endif
+            }
+
+            Text(project.name)
                 .font(.title)
                 .padding(20)
                 .frame(maxWidth: .infinity)
@@ -27,6 +39,9 @@ struct ProjectListItemView: View {
 
 struct ProjectListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectListItemView()
+        let project = Project(name: "Imperial Fists",
+                              image: #imageLiteral(resourceName: "imperial_fists_background"),
+                              steps: [])
+        ProjectListItemView(project: project)
     }
 }

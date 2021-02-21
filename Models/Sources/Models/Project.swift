@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import UIKit
 
-public struct Project {
-    let name: String
-    let image: UIImage?
-    let steps: [Step]
+public struct Project: Identifiable {
+    public let id = UUID()
+    public let name: String
+    public let image: PHImage?
+    public let steps: [Step]
 
-    public init(name: String, image: UIImage?, steps: [Step]) {
+    public init(name: String, image: PHImage?, steps: [Step]) {
         self.name = name
         self.image = image
         self.steps = steps

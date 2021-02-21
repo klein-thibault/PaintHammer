@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import UIKit
 
 public struct Step {
     let description: String
     let paint: Paint?
-    let image: UIImage?
+    let image: PHImage?
 
-    public init(description: String, paint: Paint?, image: UIImage?) {
+    public init(description: String, paint: Paint?, image: PHImage?) {
         self.description = description
         self.paint = paint
         self.image = image

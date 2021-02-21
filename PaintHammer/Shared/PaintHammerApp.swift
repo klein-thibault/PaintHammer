@@ -11,7 +11,7 @@ import SwiftUI
 struct PaintHammerApp: App {
     var body: some Scene {
         WindowGroup {
-            ProjectsListView()
+            ProjectsListView(viewModel: ProjectsListViewModel())
         }
     }
 }
