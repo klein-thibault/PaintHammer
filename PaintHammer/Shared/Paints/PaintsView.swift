@@ -11,6 +11,8 @@ import SwiftUI
 struct PaintsView: View {
     @State private var selectedPaintBrand = 0
     @Binding var selectedPaint: Paint?
+    @Environment(\.presentationMode) var presentation
+
     var paintBrands = ["Citadel", "Vallejo", "AK"]
     var availablePaints = [
         "Citadel": [
@@ -32,10 +34,13 @@ struct PaintsView: View {
                 let selectedBrand = paintBrands[selectedPaintBrand]
                 if let selectedPaints = availablePaints[selectedBrand] {
                     ForEach(selectedPaints) { paint in
-                        HStack {
-                            PaintCircleColorView(color: paint.color)
-                            Text(paint.name)
-                        }
+                        Button(action: {
+                            selectedPaint = paint
+                            // Pop back to the add step view
+                            presentation.wrappedValue.dismiss()
+                        }, label: {
+                            PaintView(paint: paint)
+                        })
                     }
                 }
             }

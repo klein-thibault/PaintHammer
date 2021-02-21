@@ -14,10 +14,7 @@ struct StepView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             if let paint = step.paint {
-                HStack(spacing: 20) {
-                    PaintCircleColorView(color: paint.color)
-                    Text(paint.name)
-                }
+                PaintView(paint: paint)
             }
 
             Text(step.description)

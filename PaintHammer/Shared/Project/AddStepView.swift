@@ -20,7 +20,7 @@ struct AddStepView: View {
                 if let selectedPaint = selectedPaint {
                     NavigationLink(
                         destination: PaintsView(selectedPaint: $selectedPaint)) {
-                        Text(selectedPaint.name)
+                        PaintView(paint: selectedPaint)
                         }
                 } else {
                     NavigationLink(
