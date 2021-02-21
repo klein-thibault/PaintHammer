@@ -5,16 +5,29 @@
 //  Created by Thibault Klein on 2/21/21.
 //
 
+import Models
 import SwiftUI
 
 struct AddStepView: View {
     @State private var stepDescription: String = ""
+    @State private var selectedPaint: Paint?
     @Binding var showAddStepView: Bool
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 25) {
+            VStack(alignment: .leading, spacing: 25) {
                 TextField("Description", text: $stepDescription)
+                if let selectedPaint = selectedPaint {
+                    NavigationLink(
+                        destination: PaintsView(selectedPaint: $selectedPaint)) {
+                        Text(selectedPaint.name)
+                        }
+                } else {
+                    NavigationLink(
+                        destination: PaintsView(selectedPaint: $selectedPaint)) {
+                        Text("Select a paint")
+                        }
+                }
                 Button("Add Step") {
                     print("Step Added!")
                 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct Paint {
+public struct Paint: Identifiable {
+    public let id = UUID()
     public let name: String
     public let brand: String
     public let color: PHColor
