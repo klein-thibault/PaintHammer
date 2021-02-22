@@ -13,6 +13,8 @@ struct AddStepView: View {
     @State private var selectedPaint: Paint?
     @Binding var showAddStepView: Bool
 
+    @ObservedObject var project: Project
+
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 25) {
@@ -29,8 +31,11 @@ struct AddStepView: View {
                         }
                 }
                 Button("Add Step") {
-                    print("Step Added!")
+                    let step = Step(description: stepDescription, paint: selectedPaint, image: nil)
+                    project.steps.append(step)
+                    showAddStepView = false
                 }
+                .disabled(stepDescription.isEmpty)
                 Spacer()
             }
             .padding()
@@ -46,6 +51,6 @@ struct AddStepView_Previews: PreviewProvider {
     @State static var showAddStepView: Bool = true
 
     static var previews: some View {
-        AddStepView(showAddStepView: $showAddStepView)
+        AddStepView(showAddStepView: $showAddStepView, project: Project(name: "", image: nil, steps: []))
     }
 }

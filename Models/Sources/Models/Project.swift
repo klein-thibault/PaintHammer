@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct Project: Identifiable {
+public class Project: Identifiable, ObservableObject {
     public let id = UUID()
     public let name: String
     public let image: PHImage?
-    public let steps: [Step]
+    @Published public var steps: [Step]
 
     public init(name: String, image: PHImage?, steps: [Step]) {
         self.name = name

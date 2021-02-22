@@ -9,8 +9,8 @@ import Models
 import SwiftUI
 
 struct ProjectView: View {
-    var project: Project
     @State var showAddStepView = false
+    @ObservedObject var project: Project
 
     var body: some View {
         List {
@@ -23,7 +23,7 @@ struct ProjectView: View {
             showAddStepView.toggle()
         })
         .sheet(isPresented: $showAddStepView) {
-            AddStepView(showAddStepView: $showAddStepView)
+            AddStepView(showAddStepView: $showAddStepView, project: project)
         }
     }
 }
