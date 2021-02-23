@@ -11,9 +11,13 @@ import SwiftUI
 struct AddStepView: View {
     @State private var stepDescription: String = ""
     @State private var selectedPaint: Paint?
+    @State private var selectedImage: UIImage?
+    @State private var showImagePicker = false
     @Binding var showAddStepView: Bool
 
     @ObservedObject var project: Project
+
+    @State var image: Image?
 
     var body: some View {
         NavigationView {
@@ -23,19 +27,35 @@ struct AddStepView: View {
                     NavigationLink(
                         destination: PaintsView(selectedPaint: $selectedPaint)) {
                         PaintView(paint: selectedPaint)
-                        }
+                    }
                 } else {
                     NavigationLink(
                         destination: PaintsView(selectedPaint: $selectedPaint)) {
                         Text("Select a paint")
-                        }
+                    }
                 }
+
+                Button(action: {
+                    showImagePicker = true
+                }, label: {
+                    if let image = image {
+                        image
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                    } else {
+                        Image(uiImage: #imageLiteral(resourceName: "placeholder_image"))
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                    }
+                })
+
                 Button("Add Step") {
-                    let step = Step(description: stepDescription, paint: selectedPaint, image: nil)
+                    let step = Step(description: stepDescription, paint: selectedPaint, image: selectedImage)
                     project.steps.append(step)
                     showAddStepView = false
                 }
                 .disabled(stepDescription.isEmpty)
+
                 Spacer()
             }
             .padding()
@@ -43,7 +63,15 @@ struct AddStepView: View {
             .navigationBarItems(trailing: Button("Done") {
                 showAddStepView = false
             })
+            .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+                ImagePickerView(image: self.$selectedImage)
+            }
         }
+    }
+
+    func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        image = Image(uiImage: selectedImage)
     }
 }
 

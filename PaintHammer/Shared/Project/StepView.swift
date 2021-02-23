@@ -12,7 +12,7 @@ struct StepView: View {
     var step: Step
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 20) {
             if let paint = step.paint {
                 PaintView(paint: paint)
             }

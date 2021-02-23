@@ -37,6 +37,8 @@
 		8E6A45B525E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45B325E2FBBD0026F3BC /* PaintCircleColorView.swift */; };
 		8E6A45BB25E2FDC20026F3BC /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45BA25E2FDC20026F3BC /* PaintView.swift */; };
 		8E6A45BC25E2FDC20026F3BC /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45BA25E2FDC20026F3BC /* PaintView.swift */; };
+		8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
+		8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 		8E6A45A825E2F56E0026F3BC /* PaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintsView.swift; sourceTree = "<group>"; };
 		8E6A45B325E2FBBD0026F3BC /* PaintCircleColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCircleColorView.swift; sourceTree = "<group>"; };
 		8E6A45BA25E2FDC20026F3BC /* PaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
+		8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,7 @@
 				8E36E17525E1ABF000ADC303 /* ProjectView.swift */,
 				8E525C2B25E1B8F700E0A9C0 /* StepView.swift */,
 				8E6A45A025E2EED60026F3BC /* AddStepView.swift */,
+				8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -428,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */,
 				8E36E16525E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
 				8E6A45B425E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8E36E13325E199DC00ADC303 /* ProjectsListView.swift in Sources */,
@@ -447,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */,
 				8E36E16625E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
 				8E6A45B525E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8E36E13425E199DC00ADC303 /* ProjectsListView.swift in Sources */,
