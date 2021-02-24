@@ -12,17 +12,15 @@ struct AddStepView: View {
     @State private var stepDescription: String = ""
     @State private var selectedPaint: Paint?
     @State private var selectedImage: UIImage?
-    @State private var showImagePicker = false
     @Binding var showAddStepView: Bool
+    @State var image: Image?
 
     @ObservedObject var project: Project
-
-    @State var image: Image?
 
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 25) {
-                TextField("Description", text: $stepDescription)
+                TextField("Step description", text: $stepDescription)
                 if let selectedPaint = selectedPaint {
                     NavigationLink(
                         destination: PaintsView(selectedPaint: $selectedPaint)) {
@@ -35,19 +33,7 @@ struct AddStepView: View {
                     }
                 }
 
-                Button(action: {
-                    showImagePicker = true
-                }, label: {
-                    if let image = image {
-                        image
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                    } else {
-                        Image(uiImage: #imageLiteral(resourceName: "placeholder_image"))
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                    }
-                })
+                ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
                 Button("Add Step") {
                     let step = Step(description: stepDescription, paint: selectedPaint, image: selectedImage)
@@ -63,15 +49,7 @@ struct AddStepView: View {
             .navigationBarItems(trailing: Button("Done") {
                 showAddStepView = false
             })
-            .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-                ImagePickerView(image: self.$selectedImage)
-            }
         }
-    }
-
-    func loadImage() {
-        guard let selectedImage = selectedImage else { return }
-        image = Image(uiImage: selectedImage)
     }
 }
 

@@ -18,7 +18,7 @@ struct ProjectView: View {
                 StepView(step: step)
             }
         }
-        .navigationTitle("My Project Name")
+        .navigationTitle(project.name)
         .navigationBarItems(trailing: Button("Add Step") {
             showAddStepView.toggle()
         })

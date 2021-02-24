@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProjectsListView: View {
     @ObservedObject var viewModel: ProjectsListViewModel
+    @State private var showAddProjectView = false
 
     var body: some View {
         NavigationView {
@@ -22,6 +23,12 @@ struct ProjectsListView: View {
             }
             .padding()
             .navigationTitle("PaintHammer")
+            .navigationBarItems(trailing: Button("Create Project") {
+                showAddProjectView.toggle()
+            })
+            .sheet(isPresented: $showAddProjectView) {
+                CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
+            }
         }
         .onAppear {
             viewModel.loadProjects()

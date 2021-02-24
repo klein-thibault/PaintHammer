@@ -17,6 +17,7 @@ struct ProjectListItemView: View {
                 Image(phImage: image)
                     .resizable()
                     .scaledToFit()
+                    .clipped()
             }
 
             Text(project.name)

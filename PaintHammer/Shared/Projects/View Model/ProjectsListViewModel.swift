@@ -9,7 +9,7 @@ import Foundation
 import Models
 
 final class ProjectsListViewModel: ObservableObject {
-    @Published private(set) var projects: [Project] = []
+    @Published var projects: [Project] = []
 
     func loadProjects() {
         let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
