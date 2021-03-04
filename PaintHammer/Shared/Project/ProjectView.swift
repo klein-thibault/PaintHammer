@@ -14,11 +14,11 @@ struct ProjectView: View {
 
     var body: some View {
         List {
-            ForEach(project.steps) { step in
+            ForEach(project.stepsArray) { step in
                 StepView(step: step)
             }
         }
-        .navigationTitle(project.name)
+        .navigationTitle(project.nameWrapped)
         .navigationBarItems(trailing: Button("Add Step") {
             showAddStepView.toggle()
         })
@@ -29,11 +29,27 @@ struct ProjectView: View {
 }
 
 struct ProjectView_Previews: PreviewProvider {
+    static var paint: Paint {
+        let paint = Paint(context: PersistenceController.shared.container.viewContext)
+        paint.name = "Dawnstone"
+        paint.brand = "Citadel"
+        return paint
+    }
+
+    static var step: Step {
+        let step = Step(context: PersistenceController.shared.container.viewContext)
+        step.name = "Step"
+        step.paint = paint
+        return step
+    }
+
+    static var project: Project {
+        let project = Project(context: PersistenceController.shared.container.viewContext)
+        project.name = "Imperial Fists"
+        project.addToSteps(step)
+    }
+
     static var previews: some View {
-        let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
-        let step = Step(description: "Prime black", paint: whiteInk, image: nil)
-        ProjectView(project: Project(name: "Imperial Fists",
-                                     image: #imageLiteral(resourceName: "imperial_fists_background"),
-                                     steps: [step]))
+        ProjectView(project: project)
     }
 }

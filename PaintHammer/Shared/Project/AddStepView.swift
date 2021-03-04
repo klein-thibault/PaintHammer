@@ -36,7 +36,7 @@ struct AddStepView: View {
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
                 Button("Add Step") {
-                    let step = Step(description: stepDescription, paint: selectedPaint, image: selectedImage)
+                    let step = StepDisplayModel(description: stepDescription, paint: selectedPaint, image: selectedImage)
                     project.steps.append(step)
                     showAddStepView = false
                 }
@@ -56,7 +56,27 @@ struct AddStepView: View {
 struct AddStepView_Previews: PreviewProvider {
     @State static var showAddStepView: Bool = true
 
+    static var paint: Paint {
+        let paint = Paint(context: PersistenceController.shared.container.viewContext)
+        paint.name = "Dawnstone"
+        paint.brand = "Citadel"
+        return paint
+    }
+
+    static var step: Step {
+        let step = Step(context: PersistenceController.shared.container.viewContext)
+        step.name = "Step"
+        step.paint = paint
+        return step
+    }
+
+    static var project: Project {
+        let project = Project(context: PersistenceController.shared.container.viewContext)
+        project.name = "Imperial Fists"
+        project.addToSteps(step)
+    }
+
     static var previews: some View {
-        AddStepView(showAddStepView: $showAddStepView, project: Project(name: "", image: nil, steps: []))
+        AddStepView(showAddStepView: $showAddStepView, project: project)
     }
 }

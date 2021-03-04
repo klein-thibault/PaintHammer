@@ -10,11 +10,14 @@ import SwiftUI
 struct ProjectsListView: View {
     @ObservedObject var viewModel: ProjectsListViewModel
     @State private var showAddProjectView = false
+    @FetchRequest(entity: Project.entity(),
+                  sortDescriptors: [])
+    var projects: FetchedResults<Project>
 
     var body: some View {
         NavigationView {
             VStack(spacing: 25) {
-                ForEach(viewModel.projects) { project in
+                ForEach(projects, id: \.self) { project in
                     NavigationLink(destination: ProjectView(project: project)) {
                         ProjectListItemView(project: project)
                     }
@@ -29,9 +32,6 @@ struct ProjectsListView: View {
             .sheet(isPresented: $showAddProjectView) {
                 CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
             }
-        }
-        .onAppear {
-            viewModel.loadProjects()
         }
     }
 }

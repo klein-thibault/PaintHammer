@@ -37,12 +37,36 @@
 		8E6A45B525E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45B325E2FBBD0026F3BC /* PaintCircleColorView.swift */; };
 		8E6A45BB25E2FDC20026F3BC /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45BA25E2FDC20026F3BC /* PaintView.swift */; };
 		8E6A45BC25E2FDC20026F3BC /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45BA25E2FDC20026F3BC /* PaintView.swift */; };
+		8EA086D525F0596200414808 /* Paint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086CF25F0596200414808 /* Paint+CoreDataClass.swift */; };
+		8EA086D625F0596200414808 /* Paint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086CF25F0596200414808 /* Paint+CoreDataClass.swift */; };
+		8EA086D725F0596200414808 /* Paint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D025F0596200414808 /* Paint+CoreDataProperties.swift */; };
+		8EA086D825F0596200414808 /* Paint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D025F0596200414808 /* Paint+CoreDataProperties.swift */; };
+		8EA086D925F0596200414808 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D125F0596200414808 /* Project+CoreDataClass.swift */; };
+		8EA086DA25F0596200414808 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D125F0596200414808 /* Project+CoreDataClass.swift */; };
+		8EA086DB25F0596200414808 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D225F0596200414808 /* Project+CoreDataProperties.swift */; };
+		8EA086DC25F0596200414808 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D225F0596200414808 /* Project+CoreDataProperties.swift */; };
+		8EA086DD25F0596200414808 /* Step+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D325F0596200414808 /* Step+CoreDataClass.swift */; };
+		8EA086DE25F0596200414808 /* Step+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D325F0596200414808 /* Step+CoreDataClass.swift */; };
+		8EA086DF25F0596200414808 /* Step+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D425F0596200414808 /* Step+CoreDataProperties.swift */; };
+		8EA086E025F0596200414808 /* Step+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086D425F0596200414808 /* Step+CoreDataProperties.swift */; };
+		8EA086EA25F05A9100414808 /* PaintDisplayModel+Paint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086E925F05A9100414808 /* PaintDisplayModel+Paint.swift */; };
+		8EA086EB25F05A9100414808 /* PaintDisplayModel+Paint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA086E925F05A9100414808 /* PaintDisplayModel+Paint.swift */; };
+		8EA0870125F05B9000414808 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0870025F05B9000414808 /* UIColor+Helpers.swift */; };
+		8EA0870725F05BCB00414808 /* NSColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0870625F05BCB00414808 /* NSColor+Helpers.swift */; };
+		8EA0870D25F05D8F00414808 /* StepDisplayModel+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0870C25F05D8F00414808 /* StepDisplayModel+Init.swift */; };
+		8EA0870E25F05D8F00414808 /* StepDisplayModel+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0870C25F05D8F00414808 /* StepDisplayModel+Init.swift */; };
+		8EA0871425F05E0B00414808 /* ProjectDisplayModel+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0871325F05E0B00414808 /* ProjectDisplayModel+Init.swift */; };
+		8EA0871525F05E0B00414808 /* ProjectDisplayModel+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0871325F05E0B00414808 /* ProjectDisplayModel+Init.swift */; };
 		8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6B25E5C5B400E8E78F /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */; };
 		8EEA5E6C25E5C5B400E8E78F /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */; };
 		8EEA5E7325E5C7E100E8E78F /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */; };
 		8EEA5E7425E5C7E100E8E78F /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */; };
+		8EEA5E8825F0502C00E8E78F /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E8625F0502C00E8E78F /* Main.xcdatamodeld */; };
+		8EEA5E8925F0502C00E8E78F /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E8625F0502C00E8E78F /* Main.xcdatamodeld */; };
+		8EEA5E9025F0514300E8E78F /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E8F25F0514300E8E78F /* PersistenceController.swift */; };
+		8EEA5E9125F0514300E8E78F /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E8F25F0514300E8E78F /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,9 +114,22 @@
 		8E6A45A825E2F56E0026F3BC /* PaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintsView.swift; sourceTree = "<group>"; };
 		8E6A45B325E2FBBD0026F3BC /* PaintCircleColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCircleColorView.swift; sourceTree = "<group>"; };
 		8E6A45BA25E2FDC20026F3BC /* PaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
+		8EA086CF25F0596200414808 /* Paint+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paint+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8EA086D025F0596200414808 /* Paint+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paint+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8EA086D125F0596200414808 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8EA086D225F0596200414808 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8EA086D325F0596200414808 /* Step+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Step+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8EA086D425F0596200414808 /* Step+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Step+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8EA086E925F05A9100414808 /* PaintDisplayModel+Paint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaintDisplayModel+Paint.swift"; sourceTree = "<group>"; };
+		8EA0870025F05B9000414808 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		8EA0870625F05BCB00414808 /* NSColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Helpers.swift"; sourceTree = "<group>"; };
+		8EA0870C25F05D8F00414808 /* StepDisplayModel+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StepDisplayModel+Init.swift"; sourceTree = "<group>"; };
+		8EA0871325F05E0B00414808 /* ProjectDisplayModel+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectDisplayModel+Init.swift"; sourceTree = "<group>"; };
 		8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
 		8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
+		8EEA5E8725F0502C00E8E78F /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		8EEA5E8F25F0514300E8E78F /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,9 +183,10 @@
 		8E36E10725E199DB00ADC303 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				8E36E10A25E199DB00ADC303 /* Assets.xcassets */,
-				8EEA5E7125E5C7D000E8E78F /* Image */,
 				8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */,
+				8E36E10A25E199DB00ADC303 /* Assets.xcassets */,
+				8EEA5E8E25F0513700E8E78F /* Core Data */,
+				8EEA5E7125E5C7D000E8E78F /* Image */,
 				8E6A45A725E2F55E0026F3BC /* Paints */,
 				8E36E16C25E1AB6F00ADC303 /* Project */,
 				8E36E16B25E1AB5D00ADC303 /* Projects */,
@@ -254,6 +292,7 @@
 			children = (
 				8E6A457725E2D4490026F3BC /* Image+PHImage.swift */,
 				8E6A458925E2EB540026F3BC /* Color+PHColor.swift */,
+				8EA0870025F05B9000414808 /* UIColor+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +302,7 @@
 			children = (
 				8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */,
 				8E6A458F25E2EB8B0026F3BC /* Color+PHColor.swift */,
+				8EA0870625F05BCB00414808 /* NSColor+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +323,24 @@
 				8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		8EEA5E8E25F0513700E8E78F /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				8EEA5E8625F0502C00E8E78F /* Main.xcdatamodeld */,
+				8EA086CF25F0596200414808 /* Paint+CoreDataClass.swift */,
+				8EA086D025F0596200414808 /* Paint+CoreDataProperties.swift */,
+				8EEA5E8F25F0514300E8E78F /* PersistenceController.swift */,
+				8EA086D125F0596200414808 /* Project+CoreDataClass.swift */,
+				8EA086D225F0596200414808 /* Project+CoreDataProperties.swift */,
+				8EA086D325F0596200414808 /* Step+CoreDataClass.swift */,
+				8EA086D425F0596200414808 /* Step+CoreDataProperties.swift */,
+				8EA086E925F05A9100414808 /* PaintDisplayModel+Paint.swift */,
+				8EA0870C25F05D8F00414808 /* StepDisplayModel+Init.swift */,
+				8EA0871325F05E0B00414808 /* ProjectDisplayModel+Init.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,20 +507,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */,
+				8EA0871425F05E0B00414808 /* ProjectDisplayModel+Init.swift in Sources */,
 				8E36E16525E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
+				8EA0870D25F05D8F00414808 /* StepDisplayModel+Init.swift in Sources */,
+				8EA086EA25F05A9100414808 /* PaintDisplayModel+Paint.swift in Sources */,
+				8EA086D525F0596200414808 /* Paint+CoreDataClass.swift in Sources */,
 				8E6A45B425E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8E36E13325E199DC00ADC303 /* ProjectsListView.swift in Sources */,
+				8EA0870125F05B9000414808 /* UIColor+Helpers.swift in Sources */,
 				8EEA5E6B25E5C5B400E8E78F /* CreateProjectView.swift in Sources */,
 				8E36E17625E1ABF000ADC303 /* ProjectView.swift in Sources */,
+				8EA086DF25F0596200414808 /* Step+CoreDataProperties.swift in Sources */,
 				8E525C2C25E1B8F700E0A9C0 /* StepView.swift in Sources */,
+				8EA086D725F0596200414808 /* Paint+CoreDataProperties.swift in Sources */,
+				8EA086D925F0596200414808 /* Project+CoreDataClass.swift in Sources */,
+				8EA086DB25F0596200414808 /* Project+CoreDataProperties.swift in Sources */,
 				8E6A45BB25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */,
+				8EEA5E9025F0514300E8E78F /* PersistenceController.swift in Sources */,
 				8EEA5E7325E5C7E100E8E78F /* ImageSelectionView.swift in Sources */,
 				8E36E13125E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 				8E6A45A125E2EED60026F3BC /* AddStepView.swift in Sources */,
 				8E6A458A25E2EB540026F3BC /* Color+PHColor.swift in Sources */,
+				8EEA5E8825F0502C00E8E78F /* Main.xcdatamodeld in Sources */,
 				8E6A45A925E2F56E0026F3BC /* PaintsView.swift in Sources */,
+				8EA086DD25F0596200414808 /* Step+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,20 +541,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */,
+				8EA0871525F05E0B00414808 /* ProjectDisplayModel+Init.swift in Sources */,
 				8E36E16625E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
+				8EA0870E25F05D8F00414808 /* StepDisplayModel+Init.swift in Sources */,
+				8EA086EB25F05A9100414808 /* PaintDisplayModel+Paint.swift in Sources */,
+				8EA086D625F0596200414808 /* Paint+CoreDataClass.swift in Sources */,
 				8E6A45B525E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8E36E13425E199DC00ADC303 /* ProjectsListView.swift in Sources */,
 				8EEA5E6C25E5C5B400E8E78F /* CreateProjectView.swift in Sources */,
 				8E36E17725E1ABF000ADC303 /* ProjectView.swift in Sources */,
+				8EA086E025F0596200414808 /* Step+CoreDataProperties.swift in Sources */,
 				8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */,
+				8EA086D825F0596200414808 /* Paint+CoreDataProperties.swift in Sources */,
+				8EA086DA25F0596200414808 /* Project+CoreDataClass.swift in Sources */,
+				8EA086DC25F0596200414808 /* Project+CoreDataProperties.swift in Sources */,
+				8EA0870725F05BCB00414808 /* NSColor+Helpers.swift in Sources */,
 				8E6A45BC25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */,
+				8EEA5E9125F0514300E8E78F /* PersistenceController.swift in Sources */,
 				8EEA5E7425E5C7E100E8E78F /* ImageSelectionView.swift in Sources */,
 				8E36E13225E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 				8E6A45A225E2EED60026F3BC /* AddStepView.swift in Sources */,
 				8E6A459025E2EB8B0026F3BC /* Color+PHColor.swift in Sources */,
+				8EEA5E8925F0502C00E8E78F /* Main.xcdatamodeld in Sources */,
 				8E6A45AA25E2F56E0026F3BC /* PaintsView.swift in Sources */,
+				8EA086DE25F0596200414808 /* Step+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +955,19 @@
 			productName = Models;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		8EEA5E8625F0502C00E8E78F /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8EEA5E8725F0502C00E8E78F /* Main.xcdatamodel */,
+			);
+			currentVersion = 8EEA5E8725F0502C00E8E78F /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8E36E10325E199DA00ADC303 /* Project object */;
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Paint" representedClassName="Paint" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="colorHexValue" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="step" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Step" inverseName="paint" inverseEntity="Step"/>
+    </entity>
+    <entity name="Project" representedClassName="Project" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Step" inverseName="project" inverseEntity="Step"/>
+    </entity>
+    <entity name="Step" representedClassName="Step" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="paint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Paint" inverseName="step" inverseEntity="Paint"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="steps" inverseEntity="Project"/>
+    </entity>
+    <elements>
+        <element name="Paint" positionX="162.55859375" positionY="-186.9140625" width="128" height="103"/>
+        <element name="Project" positionX="-323.90625" positionY="-141.7265625" width="128" height="73"/>
+        <element name="Step" positionX="-92.1015625" positionY="-156.76171875" width="128" height="88"/>
+    </elements>
+</model>

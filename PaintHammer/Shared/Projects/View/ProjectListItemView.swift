@@ -9,7 +9,7 @@ import Models
 import SwiftUI
 
 struct ProjectListItemView: View {
-    var project: Project
+    var project: ProjectDisplayModel
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -34,7 +34,7 @@ struct ProjectListItemView: View {
 
 struct ProjectListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        let project = Project(name: "Imperial Fists",
+        let project = ProjectDisplayModel(name: "Imperial Fists",
                               image: #imageLiteral(resourceName: "imperial_fists_background"),
                               steps: [])
         ProjectListItemView(project: project)

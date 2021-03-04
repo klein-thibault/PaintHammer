@@ -19,21 +19,33 @@ struct StepView: View {
 
             Text(step.description)
 
-            if let image = step.image {
-                Image(phImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 10)
-            }
+//            if let image = step.image {
+//                Image(phImage: image)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .shadow(radius: 10)
+//            }
         }
         .padding()
     }
 }
 
 struct StepView_Previews: PreviewProvider {
+    static var paint: Paint {
+        let paint = Paint(context: PersistenceController.shared.container.viewContext)
+        paint.name = "Dawnstone"
+        paint.brand = "Citadel"
+        return paint
+    }
+
+    static var step: Step {
+        let step = Step(context: PersistenceController.shared.container.viewContext)
+        step.name = "Step"
+        step.paint = paint
+        return step
+    }
+
     static var previews: some View {
-        let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
-        let image = #imageLiteral(resourceName: "step_image_example")
-        StepView(step: Step(description: "Step", paint: whiteInk, image: image))
+        StepView(step: step)
     }
 }

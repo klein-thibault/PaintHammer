@@ -9,6 +9,8 @@ import Models
 import SwiftUI
 
 struct CreateProjectView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     @Binding var showAddProjectView: Bool
     @State private var projectName: String = ""
     @State private var selectedImage: PHImage?
@@ -24,8 +26,11 @@ struct CreateProjectView: View {
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
                 Button("Add Project") {
-                    let project = Project(name: projectName, image: selectedImage, steps: [])
-                    viewModel.projects.append(project)
+//                    let project = ProjectDisplayModel(name: projectName, image: selectedImage, steps: [])
+//                    viewModel.projects.append(project)
+                    let project = Project(context: managedObjectContext)
+                    project.name = projectName
+                    PersistenceController.shared.save()
                     showAddProjectView = false
                 }
 

@@ -1,5 +1,5 @@
 //
-//  Paint.swift
+//  PaintDisplayModel.swift
 //  
 //
 //  Created by Thibault Klein on 2/20/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Paint: Identifiable {
+public struct PaintDisplayModel: Identifiable {
     public let id = UUID()
     public let name: String
     public let brand: String

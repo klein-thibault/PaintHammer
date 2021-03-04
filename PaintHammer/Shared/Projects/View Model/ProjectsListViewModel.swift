@@ -7,19 +7,15 @@
 
 import Foundation
 import Models
+import SwiftUI
 
 final class ProjectsListViewModel: ObservableObject {
-    @Published var projects: [Project] = []
+    @Published var projects: [ProjectDisplayModel] = []
 
-    func loadProjects() {
-        let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
-        let blackPrimer = Paint(name: "Primer", brand: "Vallejo", color: .black)
-        let project1 = Project(name: "Imperial Fists",
-                               image: #imageLiteral(resourceName: "imperial_fists_background"),
-                               steps: [
-                                Step(description: "Prime black", paint: blackPrimer, image: nil),
-                                Step(description: "Pre-highlight", paint: whiteInk, image: nil)
-                               ])
-        self.projects = [project1]
+    func loadProjects(projects: FetchedResults<Project>) {
+        for project in projects {
+            let displayProject = ProjectDisplayModel(project: project)
+            self.projects.append(displayProject)
+        }
     }
 }

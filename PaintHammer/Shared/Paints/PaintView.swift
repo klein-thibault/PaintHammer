@@ -13,14 +13,21 @@ struct PaintView: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            PaintCircleColorView(color: paint.color)
-            Text(paint.name)
+            PaintCircleColorView(color: paint.colorWrapped)
+            Text(paint.nameWrapped)
         }
     }
 }
 
 struct PaintView_Previews: PreviewProvider {
+    static var paint: Paint {
+        let paint = Paint(context: PersistenceController.shared.container.viewContext)
+        paint.name = "Dawnstone"
+        paint.brand = "Citadel"
+        return paint
+    }
+
     static var previews: some View {
-        PaintView(paint: Paint(name: "Dawnstone", brand: "Citadel", color: .gray))
+        PaintView(paint: paint)
     }
 }
