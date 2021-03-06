@@ -37,6 +37,9 @@
 		8E6A45B525E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45B325E2FBBD0026F3BC /* PaintCircleColorView.swift */; };
 		8E6A45BB25E2FDC20026F3BC /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45BA25E2FDC20026F3BC /* PaintView.swift */; };
 		8E6A45BC25E2FDC20026F3BC /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A45BA25E2FDC20026F3BC /* PaintView.swift */; };
+		8ED53EB125F2FB8100451796 /* PaintsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */; };
+		8ED53EBA25F2FB8400451796 /* PaintsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */; };
+		8ED53F0C25F2FD9400451796 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED53F0B25F2FD9400451796 /* Networking */; };
 		8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6B25E5C5B400E8E78F /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */; };
@@ -90,6 +93,8 @@
 		8E6A45A825E2F56E0026F3BC /* PaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintsView.swift; sourceTree = "<group>"; };
 		8E6A45B325E2FBBD0026F3BC /* PaintCircleColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintCircleColorView.swift; sourceTree = "<group>"; };
 		8E6A45BA25E2FDC20026F3BC /* PaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
+		8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintsViewModel.swift; sourceTree = "<group>"; };
+		8ED53EC025F2FC1200451796 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = ../Networking; sourceTree = "<group>"; };
 		8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
 		8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED53F0C25F2FD9400451796 /* Networking in Frameworks */,
 				8E36E15525E19A8600ADC303 /* Models in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +138,7 @@
 		8E36E10225E199DA00ADC303 = {
 			isa = PBXGroup;
 			children = (
+				8ED53EC025F2FC1200451796 /* Networking */,
 				8E36E14E25E19A5100ADC303 /* Models */,
 				8E36E10725E199DB00ADC303 /* Shared */,
 				8E36E11125E199DC00ADC303 /* iOS */,
@@ -270,11 +277,28 @@
 		8E6A45A725E2F55E0026F3BC /* Paints */ = {
 			isa = PBXGroup;
 			children = (
+				8ED53EAF25F2FB7500451796 /* View Model */,
+				8ED53EAE25F2FB6D00451796 /* View */,
+			);
+			path = Paints;
+			sourceTree = "<group>";
+		};
+		8ED53EAE25F2FB6D00451796 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				8E6A45A825E2F56E0026F3BC /* PaintsView.swift */,
 				8E6A45B325E2FBBD0026F3BC /* PaintCircleColorView.swift */,
 				8E6A45BA25E2FDC20026F3BC /* PaintView.swift */,
 			);
-			path = Paints;
+			path = View;
+			sourceTree = "<group>";
+		};
+		8ED53EAF25F2FB7500451796 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		8EEA5E7125E5C7D000E8E78F /* Image */ = {
@@ -303,6 +327,7 @@
 			name = "PaintHammer (iOS)";
 			packageProductDependencies = (
 				8E36E15425E19A8600ADC303 /* Models */,
+				8ED53F0B25F2FD9400451796 /* Networking */,
 			);
 			productName = "PaintHammer (iOS)";
 			productReference = 8E36E10F25E199DC00ADC303 /* PaintHammer.app */;
@@ -459,6 +484,7 @@
 				8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */,
 				8EEA5E7325E5C7E100E8E78F /* ImageSelectionView.swift in Sources */,
+				8ED53EB125F2FB8100451796 /* PaintsViewModel.swift in Sources */,
 				8E36E13125E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 				8E6A45A125E2EED60026F3BC /* AddStepView.swift in Sources */,
 				8E6A458A25E2EB540026F3BC /* Color+PHColor.swift in Sources */,
@@ -481,6 +507,7 @@
 				8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */,
 				8EEA5E7425E5C7E100E8E78F /* ImageSelectionView.swift in Sources */,
+				8ED53EBA25F2FB8400451796 /* PaintsViewModel.swift in Sources */,
 				8E36E13225E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 				8E6A45A225E2EED60026F3BC /* AddStepView.swift in Sources */,
 				8E6A459025E2EB8B0026F3BC /* Color+PHColor.swift in Sources */,
@@ -871,6 +898,10 @@
 		8E36E15625E19A8D00ADC303 /* Models */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Models;
+		};
+		8ED53F0B25F2FD9400451796 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

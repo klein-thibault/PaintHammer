@@ -23,12 +23,12 @@ struct AddStepView: View {
                 TextField("Step description", text: $stepDescription)
                 if let selectedPaint = selectedPaint {
                     NavigationLink(
-                        destination: PaintsView(selectedPaint: $selectedPaint)) {
+                        destination: PaintsView(selectedPaint: $selectedPaint, viewModel: PaintsViewModel())) {
                         PaintView(paint: selectedPaint)
                     }
                 } else {
                     NavigationLink(
-                        destination: PaintsView(selectedPaint: $selectedPaint)) {
+                        destination: PaintsView(selectedPaint: $selectedPaint, viewModel: PaintsViewModel())) {
                         Text("Select a paint")
                     }
                 }
