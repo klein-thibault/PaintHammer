@@ -13,11 +13,10 @@ struct ProjectListItemView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            if project.image != nil {
-//                Image(phImage: image)
-//                    .resizable()
-//                    .scaledToFit()
-//                    .clipped()
+            if let image = project.image, let url = URL(string: image) {
+                AsyncImage(url: url, placeholder: { Image("placeholder_image") })
+                    .scaledToFit()
+                    .clipped()
             }
 
             Text(project.name)
