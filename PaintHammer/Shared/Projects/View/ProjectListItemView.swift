@@ -13,11 +13,11 @@ struct ProjectListItemView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            if let image = project.image {
-                Image(phImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipped()
+            if project.image != nil {
+//                Image(phImage: image)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .clipped()
             }
 
             Text(project.name)
@@ -34,8 +34,9 @@ struct ProjectListItemView: View {
 
 struct ProjectListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        let project = Project(name: "Imperial Fists",
-                              image: #imageLiteral(resourceName: "imperial_fists_background"),
+        let project = Project(id: UUID(),
+                              name: "Imperial Fists",
+                              image: nil,
                               steps: [])
         ProjectListItemView(project: project)
     }

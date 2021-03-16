@@ -15,7 +15,7 @@ struct AddStepView: View {
     @Binding var showAddStepView: Bool
     @State var image: Image?
 
-    @ObservedObject var project: Project
+    var project: Project
 
     var body: some View {
         NavigationView {
@@ -36,8 +36,7 @@ struct AddStepView: View {
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
                 Button("Add Step") {
-                    let step = Step(description: stepDescription, paint: selectedPaint, image: selectedImage)
-                    project.steps.append(step)
+                    // TODO
                     showAddStepView = false
                 }
                 .disabled(stepDescription.isEmpty)
@@ -57,6 +56,7 @@ struct AddStepView_Previews: PreviewProvider {
     @State static var showAddStepView: Bool = true
 
     static var previews: some View {
-        AddStepView(showAddStepView: $showAddStepView, project: Project(name: "", image: nil, steps: []))
+        AddStepView(showAddStepView: $showAddStepView,
+                    project: Project(id: UUID(), name: "", image: nil, steps: []))
     }
 }

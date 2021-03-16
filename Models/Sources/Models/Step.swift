@@ -7,13 +7,14 @@
 
 import Foundation
 
-public struct Step: Identifiable {
-    public let id = UUID()
+public struct Step: Identifiable, Decodable {
+    public let id: UUID
     public let description: String
     public let paint: Paint?
-    public let image: PHImage?
+    public let image: String?
 
-    public init(description: String, paint: Paint?, image: PHImage?) {
+    public init(id: UUID, description: String, paint: Paint?, image: String?) {
+        self.id = id
         self.description = description
         self.paint = paint
         self.image = image

@@ -14,7 +14,7 @@ struct PaintsView: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject var viewModel: PaintsViewModel
 
-    var paintBrands = ["Citadel", "Vallejo", "AK"]
+    var paintBrands = ["Citadel", "Scale75"]
     var body: some View {
         VStack {
             Picker(selection: $selectedPaintBrand, label: Text("Paint Brand")) {

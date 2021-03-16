@@ -5,21 +5,38 @@
 //  Created by Thibault Klein on 2/21/21.
 //
 
+import Combine
 import Foundation
 import Models
+import Networking
 
 final class ProjectsListViewModel: ObservableObject {
     @Published var projects: [Project] = []
+    var cancellables = Set<AnyCancellable>()
+    let client = APIClient()
 
     func loadProjects() {
-        let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
-        let blackPrimer = Paint(name: "Primer", brand: "Vallejo", color: .black)
-        let project1 = Project(name: "Imperial Fists",
-                               image: #imageLiteral(resourceName: "imperial_fists_background"),
-                               steps: [
-                                Step(description: "Prime black", paint: blackPrimer, image: nil),
-                                Step(description: "Pre-highlight", paint: whiteInk, image: nil)
-                               ])
-        self.projects = [project1]
+        let url = URL(string: "http://127.0.0.1:8080")!
+        let request = HTTPRequest(baseURL: url,
+                                  path: "/projects",
+                                  method: .GET,
+                                  isAuthenticated: true)
+
+        let cancellable = client
+            .performRequest(request)
+            .decode(type: [Project].self, decoder: JSONDecoder())
+            .sink { result in
+                switch result {
+                case .failure(let error):
+                    print("Error fetching projects: \(error)")
+
+                case .finished:
+                    break
+                }
+            } receiveValue: { projects in
+                self.projects = projects
+            }
+
+        cancellables.insert(cancellable)
     }
 }

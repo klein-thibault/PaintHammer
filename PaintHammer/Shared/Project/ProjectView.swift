@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProjectView: View {
     @State var showAddStepView = false
-    @ObservedObject var project: Project
+    var project: Project
 
     var body: some View {
         List {
@@ -31,9 +31,9 @@ struct ProjectView: View {
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
         let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
-        let step = Step(description: "Prime black", paint: whiteInk, image: nil)
-        ProjectView(project: Project(name: "Imperial Fists",
-                                     image: #imageLiteral(resourceName: "imperial_fists_background"),
+        let step = Step(id: UUID(), description: "Prime black", paint: whiteInk, image: nil)
+        ProjectView(project: Project(id: UUID(), name: "Imperial Fists",
+                                     image: nil,
                                      steps: [step]))
     }
 }

@@ -24,8 +24,7 @@ struct CreateProjectView: View {
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
                 Button("Add Project") {
-                    let project = Project(name: projectName, image: selectedImage, steps: [])
-                    viewModel.projects.append(project)
+                    // TODO
                     showAddProjectView = false
                 }
 

@@ -19,11 +19,11 @@ struct StepView: View {
 
             Text(step.description)
 
-            if let image = step.image {
-                Image(phImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 10)
+            if step.image != nil {
+//                Image(phImage: image)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .shadow(radius: 10)
             }
         }
         .padding()
@@ -33,7 +33,6 @@ struct StepView: View {
 struct StepView_Previews: PreviewProvider {
     static var previews: some View {
         let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
-        let image = #imageLiteral(resourceName: "step_image_example")
-        StepView(step: Step(description: "Step", paint: whiteInk, image: image))
+        StepView(step: Step(id: UUID(), description: "Step", paint: whiteInk, image: nil))
     }
 }

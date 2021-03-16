@@ -34,7 +34,9 @@ final class PaintsViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { paints in
-                self.availablePaints = ["Citadel": paints]
+                let citadelPaints = paints.filter { $0.brand == "Citadel" }
+                let scale75Paints = paints.filter { $0.brand == "Scale75" }
+                self.availablePaints = ["Citadel": citadelPaints, "Scale75": scale75Paints]
             }
 
 

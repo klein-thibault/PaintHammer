@@ -7,13 +7,14 @@
 
 import Foundation
 
-public class Project: Identifiable, ObservableObject {
-    public let id = UUID()
+public class Project: Identifiable, Decodable {
+    public let id: UUID
     public let name: String
-    public let image: PHImage?
-    @Published public var steps: [Step]
+    public let image: String?
+    public var steps: [Step]
 
-    public init(name: String, image: PHImage?, steps: [Step]) {
+    public init(id: UUID, name: String, image: String?, steps: [Step]) {
+        self.id = id
         self.name = name
         self.image = image
         self.steps = steps
