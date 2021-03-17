@@ -23,14 +23,15 @@ struct ProjectView: View {
             showAddStepView.toggle()
         })
         .sheet(isPresented: $showAddStepView) {
-            AddStepView(showAddStepView: $showAddStepView, project: project)
+            AddStepView(viewModel: AddStepViewModel(project: project),
+                        showAddStepView: $showAddStepView)
         }
     }
 }
 
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
+        let whiteInk = Paint(id: UUID(), name: "White Ink", brand: "Liquitex", color: .white)
         let step = Step(id: UUID(), description: "Prime black", paint: whiteInk, image: nil)
         ProjectView(project: Project(id: UUID(), name: "Imperial Fists",
                                      image: nil,

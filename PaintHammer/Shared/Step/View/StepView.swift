@@ -31,7 +31,7 @@ struct StepView: View {
 
 struct StepView_Previews: PreviewProvider {
     static var previews: some View {
-        let whiteInk = Paint(name: "White Ink", brand: "Liquitex", color: .white)
+        let whiteInk = Paint(id: UUID(), name: "White Ink", brand: "Liquitex", color: .white)
         StepView(step: Step(id: UUID(), description: "Step", paint: whiteInk, image: nil))
     }
 }

@@ -9,13 +9,13 @@ import Models
 import SwiftUI
 
 struct AddStepView: View {
+    @ObservedObject var viewModel: AddStepViewModel
+    
     @State private var stepDescription: String = ""
     @State private var selectedPaint: Paint?
     @State private var selectedImage: UIImage?
     @Binding var showAddStepView: Bool
     @State var image: Image?
-
-    var project: Project
 
     var body: some View {
         NavigationView {
@@ -36,7 +36,9 @@ struct AddStepView: View {
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
                 Button("Add Step") {
-                    // TODO
+                    viewModel.addStepToProject(description: stepDescription,
+                                               image: nil,
+                                               paint: selectedPaint)
                     showAddStepView = false
                 }
                 .disabled(stepDescription.isEmpty)
@@ -56,7 +58,7 @@ struct AddStepView_Previews: PreviewProvider {
     @State static var showAddStepView: Bool = true
 
     static var previews: some View {
-        AddStepView(showAddStepView: $showAddStepView,
-                    project: Project(id: UUID(), name: "", image: nil, steps: []))
+        AddStepView(viewModel: AddStepViewModel(project: Project(id: UUID(), name: "", image: nil, steps: [])),
+                    showAddStepView: $showAddStepView)
     }
 }

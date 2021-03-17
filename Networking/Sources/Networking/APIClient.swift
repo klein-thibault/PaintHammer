@@ -14,7 +14,10 @@ public struct APIClient {
     public func performRequest(_ request: HTTPRequest) -> AnyPublisher<Data, Error> {
         return URLSession.shared
             .dataTaskPublisher(for: request.urlRequest)
-            .tryMap { data, _ in
+            .tryMap { data, response in
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    throw URLError(.badServerResponse)
+                }
                 return data
             }
             .receive(on: DispatchQueue.main)

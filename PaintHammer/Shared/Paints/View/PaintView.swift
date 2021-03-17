@@ -21,6 +21,6 @@ struct PaintView: View {
 
 struct PaintView_Previews: PreviewProvider {
     static var previews: some View {
-        PaintView(paint: Paint(name: "Dawnstone", brand: "Citadel", color: .gray))
+        PaintView(paint: Paint(id: UUID(), name: "Dawnstone", brand: "Citadel", color: .gray))
     }
 }

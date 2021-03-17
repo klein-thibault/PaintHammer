@@ -44,6 +44,8 @@
 		8ED53F1726006EE000451796 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53F1526006EDF00451796 /* ImageLoader.swift */; };
 		8ED53F1D26006F8800451796 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53F1C26006F8800451796 /* AsyncImage.swift */; };
 		8ED53F1E26006F8800451796 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53F1C26006F8800451796 /* AsyncImage.swift */; };
+		8ED53F2F26017F0200451796 /* AddStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53F2E26017F0200451796 /* AddStepViewModel.swift */; };
+		8ED53F3026017F0200451796 /* AddStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53F2E26017F0200451796 /* AddStepViewModel.swift */; };
 		8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6B25E5C5B400E8E78F /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */; };
@@ -101,6 +103,7 @@
 		8ED53EC025F2FC1200451796 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = ../Networking; sourceTree = "<group>"; };
 		8ED53F1526006EDF00451796 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		8ED53F1C26006F8800451796 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		8ED53F2E26017F0200451796 /* AddStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepViewModel.swift; sourceTree = "<group>"; };
 		8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
 		8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -159,12 +162,13 @@
 		8E36E10725E199DB00ADC303 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */,
 				8E36E10A25E199DB00ADC303 /* Assets.xcassets */,
 				8EEA5E7125E5C7D000E8E78F /* Image */,
-				8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */,
 				8E6A45A725E2F55E0026F3BC /* Paints */,
 				8E36E16C25E1AB6F00ADC303 /* Project */,
 				8E36E16B25E1AB5D00ADC303 /* Projects */,
+				8ED53F2B26017ED500451796 /* Step */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -237,8 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				8E36E17525E1ABF000ADC303 /* ProjectView.swift */,
-				8E525C2B25E1B8F700E0A9C0 /* StepView.swift */,
-				8E6A45A025E2EED60026F3BC /* AddStepView.swift */,
 				8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */,
 			);
 			path = Project;
@@ -303,6 +305,32 @@
 			isa = PBXGroup;
 			children = (
 				8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		8ED53F2B26017ED500451796 /* Step */ = {
+			isa = PBXGroup;
+			children = (
+				8ED53F2D26017EEF00451796 /* View Model */,
+				8ED53F2C26017EE100451796 /* View */,
+			);
+			path = Step;
+			sourceTree = "<group>";
+		};
+		8ED53F2C26017EE100451796 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E525C2B25E1B8F700E0A9C0 /* StepView.swift */,
+				8E6A45A025E2EED60026F3BC /* AddStepView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8ED53F2D26017EEF00451796 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				8ED53F2E26017F0200451796 /* AddStepViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -489,6 +517,7 @@
 				8ED53F1D26006F8800451796 /* AsyncImage.swift in Sources */,
 				8E36E17625E1ABF000ADC303 /* ProjectView.swift in Sources */,
 				8E525C2C25E1B8F700E0A9C0 /* StepView.swift in Sources */,
+				8ED53F2F26017F0200451796 /* AddStepViewModel.swift in Sources */,
 				8E6A45BB25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */,
@@ -514,6 +543,7 @@
 				8ED53F1E26006F8800451796 /* AsyncImage.swift in Sources */,
 				8E36E17725E1ABF000ADC303 /* ProjectView.swift in Sources */,
 				8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */,
+				8ED53F3026017F0200451796 /* AddStepViewModel.swift in Sources */,
 				8E6A45BC25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */,
