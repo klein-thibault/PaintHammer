@@ -9,8 +9,8 @@ import Models
 import SwiftUI
 
 struct ProjectView: View {
+    @EnvironmentObject var project: Project
     @State var showAddStepView = false
-    var project: Project
 
     var body: some View {
         List {
@@ -23,18 +23,13 @@ struct ProjectView: View {
             showAddStepView.toggle()
         })
         .sheet(isPresented: $showAddStepView) {
-            AddStepView(viewModel: AddStepViewModel(project: project),
-                        showAddStepView: $showAddStepView)
+            AddStepView(showAddStepView: $showAddStepView)
         }
     }
 }
 
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        let whiteInk = Paint(id: UUID(), name: "White Ink", brand: "Liquitex", color: .white)
-        let step = Step(id: UUID(), description: "Prime black", paint: whiteInk, image: nil)
-        ProjectView(project: Project(id: UUID(), name: "Imperial Fists",
-                                     image: nil,
-                                     steps: [step]))
+        ProjectView()
     }
 }

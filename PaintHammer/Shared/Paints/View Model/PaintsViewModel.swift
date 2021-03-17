@@ -22,8 +22,7 @@ final class PaintsViewModel: ObservableObject {
                                   method: .GET,
                                   isAuthenticated: false)
 
-        let cancellable = client
-            .performRequest(request)
+        client.performRequest(request)
             .decode(type: [Paint].self, decoder: JSONDecoder())
             .sink { result in
                 switch result {
@@ -38,8 +37,6 @@ final class PaintsViewModel: ObservableObject {
                 let scale75Paints = paints.filter { $0.brand == "Scale75" }
                 self.availablePaints = ["Citadel": citadelPaints, "Scale75": scale75Paints]
             }
-
-
-        cancellables.insert(cancellable)
+            .store(in: &cancellables)
     }
 }

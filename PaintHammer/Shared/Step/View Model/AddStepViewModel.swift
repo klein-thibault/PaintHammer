@@ -11,16 +11,13 @@ import Models
 import Networking
 
 final class AddStepViewModel: ObservableObject {
-    @Published var project: Project
-
     var cancellables = Set<AnyCancellable>()
     let client = APIClient()
 
-    init(project: Project) {
-        self.project = project
-    }
-
-    func addStepToProject(description: String, image: String?, paint: Paint?) {
+    func addStepToProject(projectId: UUID,
+                          description: String,
+                          image: String?,
+                          paint: Paint?) -> AnyPublisher<Project, Error> {
         let url = URL(string: "http://127.0.0.1:8080")!
 
         var body = ["description": description]
@@ -32,26 +29,14 @@ final class AddStepViewModel: ObservableObject {
         }
 
         let request = HTTPRequest(baseURL: url,
-                                  path: "/projects/\(project.id.uuidString)/steps",
+                                  path: "/projects/\(projectId.uuidString)/steps",
                                   method: .POST,
                                   body: body,
                                   isAuthenticated: true)
-
-        let cancellable = client
+        
+        return client
             .performRequest(request)
-            .decode(type: Step.self, decoder: JSONDecoder())
-            .sink { result in
-                switch result {
-                case .failure(let error):
-                    print("Error fetching projects: \(error)")
-
-                case .finished:
-                    break
-                }
-            } receiveValue: { step in
-                self.project.steps.append(step)
-            }
-
-        cancellables.insert(cancellable)
+            .decode(type: Project.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
     }
 }

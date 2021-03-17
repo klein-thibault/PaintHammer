@@ -22,8 +22,7 @@ final class ProjectsListViewModel: ObservableObject {
                                   method: .GET,
                                   isAuthenticated: true)
 
-        let cancellable = client
-            .performRequest(request)
+        client.performRequest(request)
             .decode(type: [Project].self, decoder: JSONDecoder())
             .sink { result in
                 switch result {
@@ -36,7 +35,6 @@ final class ProjectsListViewModel: ObservableObject {
             } receiveValue: { projects in
                 self.projects = projects
             }
-
-        cancellables.insert(cancellable)
+            .store(in: &cancellables)
     }
 }
