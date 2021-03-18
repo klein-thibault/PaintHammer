@@ -28,6 +28,7 @@ struct ProjectsListView: View {
             })
             .sheet(isPresented: $showAddProjectView) {
                 CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
+                    .accentColor(Color.primary)
             }
         }
         .onAppear {

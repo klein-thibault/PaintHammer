@@ -31,6 +31,7 @@ struct ProjectView: View {
         })
         .sheet(isPresented: $showAddStepView) {
             AddStepView(showAddStepView: $showAddStepView)
+                .accentColor(Color.primary)
         }
     }
 

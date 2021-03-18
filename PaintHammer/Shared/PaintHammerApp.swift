@@ -12,6 +12,7 @@ struct PaintHammerApp: App {
     var body: some Scene {
         WindowGroup {
             ProjectsListView(viewModel: ProjectsListViewModel())
+                .accentColor(Color.primary)
         }
     }
 }

@@ -23,7 +23,7 @@ struct AddStepView: View {
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 25) {
+            VStack(spacing: 25) {
                 TextField("Step description", text: $stepDescription)
                 if let selectedPaint = selectedPaint {
                     NavigationLink(
@@ -33,7 +33,10 @@ struct AddStepView: View {
                 } else {
                     NavigationLink(
                         destination: PaintsView(selectedPaint: $selectedPaint, viewModel: PaintsViewModel())) {
-                        Text("Select a paint")
+                        HStack {
+                            Image(systemName: "paintbrush.fill")
+                            Text("Select a paint")
+                        }
                     }
                 }
 
@@ -57,6 +60,11 @@ struct AddStepView: View {
                         })
                         .store(in: &cancellables)
                 }
+                .frame(height: 44)
+                .frame(maxWidth: .infinity)
+                .accentColor(Color.white)
+                .background(Color.primary)
+                .cornerRadius(5)
                 .disabled(stepDescription.isEmpty)
 
                 Spacer()

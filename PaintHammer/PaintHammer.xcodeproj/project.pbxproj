@@ -27,6 +27,8 @@
 		8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */; };
 		8E67D8F6260311040085BA75 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67D8F5260311040085BA75 /* ProjectViewModel.swift */; };
 		8E67D8F7260311040085BA75 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67D8F5260311040085BA75 /* ProjectViewModel.swift */; };
+		8E67D902260318960085BA75 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67D901260318960085BA75 /* Colors.swift */; };
+		8E67D903260318960085BA75 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67D901260318960085BA75 /* Colors.swift */; };
 		8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A457725E2D4490026F3BC /* Image+PHImage.swift */; };
 		8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */; };
 		8E6A458A25E2EB540026F3BC /* Color+PHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A458925E2EB540026F3BC /* Color+PHColor.swift */; };
@@ -94,6 +96,7 @@
 		8E525C2B25E1B8F700E0A9C0 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListViewModel.swift; sourceTree = "<group>"; };
 		8E67D8F5260311040085BA75 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		8E67D901260318960085BA75 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8E6A457725E2D4490026F3BC /* Image+PHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+PHImage.swift"; sourceTree = "<group>"; };
 		8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+PHImage.swift"; sourceTree = "<group>"; };
 		8E6A458925E2EB540026F3BC /* Color+PHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+PHColor.swift"; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 				8E36E16C25E1AB6F00ADC303 /* Project */,
 				8E36E16B25E1AB5D00ADC303 /* Projects */,
 				8ED53F2B26017ED500451796 /* Step */,
+				8E67D900260318840085BA75 /* Theme */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -281,6 +285,14 @@
 				8E67D8F5260311040085BA75 /* ProjectViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		8E67D900260318840085BA75 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				8E67D901260318960085BA75 /* Colors.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		8E6A458325E2D4E10026F3BC /* Extensions */ = {
@@ -539,6 +551,7 @@
 				8E36E17625E1ABF000ADC303 /* ProjectView.swift in Sources */,
 				8E525C2C25E1B8F700E0A9C0 /* StepView.swift in Sources */,
 				8ED53F2F26017F0200451796 /* AddStepViewModel.swift in Sources */,
+				8E67D902260318960085BA75 /* Colors.swift in Sources */,
 				8E6A45BB25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */,
@@ -566,6 +579,7 @@
 				8E36E17725E1ABF000ADC303 /* ProjectView.swift in Sources */,
 				8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */,
 				8ED53F3026017F0200451796 /* AddStepViewModel.swift in Sources */,
+				8E67D903260318960085BA75 /* Colors.swift in Sources */,
 				8E6A45BC25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
 				8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */,
