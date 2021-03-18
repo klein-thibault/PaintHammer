@@ -11,7 +11,6 @@ import Models
 import Networking
 
 final class AddStepViewModel: ObservableObject {
-    var cancellables = Set<AnyCancellable>()
     let client = APIClient()
 
     func addStepToProject(projectId: UUID,

@@ -25,6 +25,8 @@
 		8E525C2D25E1B8F700E0A9C0 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C2B25E1B8F700E0A9C0 /* StepView.swift */; };
 		8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */; };
 		8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */; };
+		8E67D8F6260311040085BA75 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67D8F5260311040085BA75 /* ProjectViewModel.swift */; };
+		8E67D8F7260311040085BA75 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67D8F5260311040085BA75 /* ProjectViewModel.swift */; };
 		8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A457725E2D4490026F3BC /* Image+PHImage.swift */; };
 		8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */; };
 		8E6A458A25E2EB540026F3BC /* Color+PHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A458925E2EB540026F3BC /* Color+PHColor.swift */; };
@@ -91,6 +93,7 @@
 		8E36E17525E1ABF000ADC303 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		8E525C2B25E1B8F700E0A9C0 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListViewModel.swift; sourceTree = "<group>"; };
+		8E67D8F5260311040085BA75 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		8E6A457725E2D4490026F3BC /* Image+PHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+PHImage.swift"; sourceTree = "<group>"; };
 		8E6A457D25E2D48D0026F3BC /* Image+PHImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+PHImage.swift"; sourceTree = "<group>"; };
 		8E6A458925E2EB540026F3BC /* Color+PHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+PHColor.swift"; sourceTree = "<group>"; };
@@ -240,8 +243,8 @@
 		8E36E16C25E1AB6F00ADC303 /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				8E36E17525E1ABF000ADC303 /* ProjectView.swift */,
-				8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */,
+				8E67D8F4260310EE0085BA75 /* View Model */,
+				8E67D8F3260310D20085BA75 /* View */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -260,6 +263,22 @@
 			isa = PBXGroup;
 			children = (
 				8E525C3425E2CD9500E0A9C0 /* ProjectsListViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		8E67D8F3260310D20085BA75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E36E17525E1ABF000ADC303 /* ProjectView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E67D8F4260310EE0085BA75 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E67D8F5260311040085BA75 /* ProjectViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -340,6 +359,7 @@
 			children = (
 				8ED53F1C26006F8800451796 /* AsyncImage.swift */,
 				8ED53F1526006EDF00451796 /* ImageLoader.swift */,
+				8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */,
 				8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */,
 			);
 			path = Image;
@@ -513,6 +533,7 @@
 				8E36E16525E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
 				8E6A45B425E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8E36E13325E199DC00ADC303 /* ProjectsListView.swift in Sources */,
+				8E67D8F6260311040085BA75 /* ProjectViewModel.swift in Sources */,
 				8EEA5E6B25E5C5B400E8E78F /* CreateProjectView.swift in Sources */,
 				8ED53F1D26006F8800451796 /* AsyncImage.swift in Sources */,
 				8E36E17625E1ABF000ADC303 /* ProjectView.swift in Sources */,
@@ -539,6 +560,7 @@
 				8E36E16625E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
 				8E6A45B525E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8E36E13425E199DC00ADC303 /* ProjectsListView.swift in Sources */,
+				8E67D8F7260311040085BA75 /* ProjectViewModel.swift in Sources */,
 				8EEA5E6C25E5C5B400E8E78F /* CreateProjectView.swift in Sources */,
 				8ED53F1E26006F8800451796 /* AsyncImage.swift in Sources */,
 				8E36E17725E1ABF000ADC303 /* ProjectView.swift in Sources */,
