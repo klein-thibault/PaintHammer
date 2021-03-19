@@ -21,7 +21,10 @@ struct AsyncImage<Placeholder: View>: View {
     var body: some View {
         Group {
             if let image = loader.image {
-                Image(uiImage: image).resizable()
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .clipped()
             } else {
                 placeholder
             }
