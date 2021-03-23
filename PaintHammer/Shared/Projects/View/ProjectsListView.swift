@@ -30,9 +30,9 @@ struct ProjectsListView: View {
                 CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
                     .accentColor(Color.primary)
             }
-        }
-        .onAppear {
-            viewModel.loadProjects()
+            .onAppear {
+                viewModel.loadProjects()
+            }
         }
     }
 }

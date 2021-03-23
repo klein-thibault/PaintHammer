@@ -24,8 +24,10 @@ final class AddStepViewModel: ObservableObject {
                         .flatMap { uploadURL in
                             return self.uploadImage(url: uploadURL.url, image: image)
                         }
-                        .map { result  in
-                            return project
+                        // add delay to give enough time for AWS lambda to trigger
+                        .delay(for: .seconds(3), scheduler: RunLoop.main)
+                        .flatMap { _ in
+                            return self.getProjectData(project)
                         }
                         .eraseToAnyPublisher()
                 } else {
@@ -82,7 +84,7 @@ final class AddStepViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    func uploadImage(url: URL, image: PHImage) -> AnyPublisher<Data, Error> {
+    private func uploadImage(url: URL, image: PHImage) -> AnyPublisher<Data, Error> {
         let imageData = image.jpegData(compressionQuality: 1.0)!
         let headers = [
             "Content-Disposition": "attachment; filename=photo",
@@ -95,6 +97,18 @@ final class AddStepViewModel: ObservableObject {
                                         body: imageData)
 
         return client.upload(request)
+            .eraseToAnyPublisher()
+    }
+
+    private func getProjectData(_ project: Project) -> AnyPublisher<Project, Error> {
+        let url = URL(string: "http://127.0.0.1:8080")!
+        let request = HTTPRequest(baseURL: url,
+                                  path: "/projects/\(project.id.uuidString)",
+                                  method: .GET,
+                                  isAuthenticated: true)
+
+        return client.performRequest(request)
+            .decode(type: Project.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
 }
