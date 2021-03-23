@@ -29,6 +29,6 @@ public class Project: ObservableObject, Identifiable, Decodable {
         id = try container.decode(UUID.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         image = try? container.decode(String.self, forKey: .image)
-        steps = try container.decode([Step].self, forKey: .steps)
+        steps = (try? container.decode([Step].self, forKey: .steps)) ?? []
     }
 }

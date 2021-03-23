@@ -12,6 +12,7 @@ import Networking
 
 final class AddStepViewModel: ObservableObject {
     let client = APIClient()
+    let imageUploader = ImageUploader()
 
     func addStepToProject(projectId: UUID,
                           description: String,
@@ -20,9 +21,9 @@ final class AddStepViewModel: ObservableObject {
         return createStep(projectId: projectId, description: description, paint: paint)
             .flatMap { project -> AnyPublisher<Project, Error> in
                 if let image = image {
-                    return self.generateUploadURLForStep(project: project, image: image)
+                    return self.imageUploader.generateUploadURLForStep(project: project, image: image)
                         .flatMap { uploadURL in
-                            return self.uploadImage(url: uploadURL.url, image: image)
+                            return self.imageUploader.uploadImage(url: uploadURL.url, image: image)
                         }
                         // add delay to give enough time for AWS lambda to trigger
                         .delay(for: .seconds(3), scheduler: RunLoop.main)
@@ -81,22 +82,6 @@ final class AddStepViewModel: ObservableObject {
         return client
             .performRequest(request)
             .decode(type: UploadImageURL.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
-    }
-
-    private func uploadImage(url: URL, image: PHImage) -> AnyPublisher<Data, Error> {
-        let imageData = image.jpegData(compressionQuality: 1.0)!
-        let headers = [
-            "Content-Disposition": "attachment; filename=photo",
-            "Content-Type": "image/jpeg",
-            "x-amz-acl": "public-read"
-        ]
-        let request = HTTPUploadRequest(url: url,
-                                        method: .PUT,
-                                        headers: headers,
-                                        body: imageData)
-
-        return client.upload(request)
             .eraseToAnyPublisher()
     }
 

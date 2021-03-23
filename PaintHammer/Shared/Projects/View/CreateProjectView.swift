@@ -5,6 +5,7 @@
 //  Created by Thibault Klein on 2/23/21.
 //
 
+import Combine
 import Models
 import SwiftUI
 
@@ -13,6 +14,7 @@ struct CreateProjectView: View {
     @State private var projectName: String = ""
     @State private var selectedImage: PHImage?
     @State private var image: Image?
+    @State var cancellabes = Set<AnyCancellable>()
 
     @ObservedObject var viewModel: ProjectsListViewModel
 
@@ -24,8 +26,13 @@ struct CreateProjectView: View {
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
                 Button("Add Project") {
-                    // TODO
-                    showAddProjectView = false
+                    viewModel.createProject(name: projectName, image: selectedImage)
+                        .sink { result in
+                            self.showAddProjectView = false
+                        } receiveValue: { projects in
+                            viewModel.projects = projects
+                        }
+                        .store(in: &cancellabes)
                 }
 
                 Spacer()
