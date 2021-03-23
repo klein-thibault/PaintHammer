@@ -15,7 +15,7 @@ struct AddStepView: View {
     
     @State private var stepDescription: String = ""
     @State private var selectedPaint: Paint?
-    @State private var selectedImage: UIImage?
+    @State private var selectedImage: PHImage?
     @Binding var showAddStepView: Bool
     @State var image: Image?
 
@@ -45,7 +45,7 @@ struct AddStepView: View {
                 Button("Add Step") {
                     viewModel.addStepToProject(projectId: project.id,
                                                description: stepDescription,
-                                               image: nil,
+                                               image: selectedImage,
                                                paint: selectedPaint)
                         .sink(receiveCompletion: { result in
                             switch result {

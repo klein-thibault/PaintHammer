@@ -20,6 +20,7 @@ struct ImageSelectionView: View {
             if let image = image {
                 image
                     .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: 200, height: 200)
             } else {
                 Image(uiImage: #imageLiteral(resourceName: "placeholder_image"))

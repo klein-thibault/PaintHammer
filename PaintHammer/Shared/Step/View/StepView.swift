@@ -20,9 +20,12 @@ struct StepView: View {
             Text(step.description)
 
             if let image = step.image, let url = URL(string: image) {
-                AsyncImage(url: url, placeholder: { Image("placeholder_image") })
-                    .scaledToFit()
-                    .shadow(radius: 10)
+                AsyncImage(url: url, placeholder: {
+                    Image("placeholder_image")
+                        .resizable()
+                })
+                .scaledToFit()
+                .shadow(radius: 10)
             }
         }
         .padding()
