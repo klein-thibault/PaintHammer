@@ -52,6 +52,8 @@
 		8ED53F3026017F0200451796 /* AddStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53F2E26017F0200451796 /* AddStepViewModel.swift */; };
 		8EDDB3F1260AA5F600486957 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB3F0260AA5F600486957 /* ImageUploader.swift */; };
 		8EDDB3F2260AA5F600486957 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB3F0260AA5F600486957 /* ImageUploader.swift */; };
+		8EDDB3F8260AB2D600486957 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB3F7260AB2D600486957 /* PrimaryButton.swift */; };
+		8EDDB3F9260AB2D600486957 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB3F7260AB2D600486957 /* PrimaryButton.swift */; };
 		8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6B25E5C5B400E8E78F /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */; };
@@ -113,6 +115,7 @@
 		8ED53F1C26006F8800451796 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		8ED53F2E26017F0200451796 /* AddStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepViewModel.swift; sourceTree = "<group>"; };
 		8EDDB3F0260AA5F600486957 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		8EDDB3F7260AB2D600486957 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
 		8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				8E67D901260318960085BA75 /* Colors.swift */,
+				8EDDB3F7260AB2D600486957 /* PrimaryButton.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -565,6 +569,7 @@
 				8ED53EB125F2FB8100451796 /* PaintsViewModel.swift in Sources */,
 				8E36E13125E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 				8E6A45A125E2EED60026F3BC /* AddStepView.swift in Sources */,
+				8EDDB3F8260AB2D600486957 /* PrimaryButton.swift in Sources */,
 				8E6A458A25E2EB540026F3BC /* Color+PHColor.swift in Sources */,
 				8E6A45A925E2F56E0026F3BC /* PaintsView.swift in Sources */,
 			);
@@ -594,6 +599,7 @@
 				8ED53EBA25F2FB8400451796 /* PaintsViewModel.swift in Sources */,
 				8E36E13225E199DC00ADC303 /* PaintHammerApp.swift in Sources */,
 				8E6A45A225E2EED60026F3BC /* AddStepView.swift in Sources */,
+				8EDDB3F9260AB2D600486957 /* PrimaryButton.swift in Sources */,
 				8E6A459025E2EB8B0026F3BC /* Color+PHColor.swift in Sources */,
 				8E6A45AA25E2F56E0026F3BC /* PaintsView.swift in Sources */,
 			);

@@ -20,20 +20,27 @@ struct CreateProjectView: View {
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(spacing: 25) {
                 TextField("Project Name", text: $projectName)
 
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
-                Button("Add Project") {
+                PrimaryButton(title: "Add Project") {
                     viewModel.createProject(name: projectName, image: selectedImage)
                         .sink { result in
-                            self.showAddProjectView = false
+                            switch result {
+                            case .finished:
+                                self.showAddProjectView = false
+
+                            case .failure(let error):
+                                print(error)
+                            }
                         } receiveValue: { projects in
                             viewModel.projects = projects
                         }
                         .store(in: &cancellabes)
                 }
+                .disabled(projectName.isEmpty)
 
                 Spacer()
             }

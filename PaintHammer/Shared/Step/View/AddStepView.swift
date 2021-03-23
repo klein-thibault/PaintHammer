@@ -42,7 +42,7 @@ struct AddStepView: View {
 
                 ImageSelectionView(selectedImage: $selectedImage, image: $image)
 
-                Button("Add Step") {
+                PrimaryButton(title: "Add Step") {
                     viewModel.addStepToProject(projectId: project.id,
                                                description: stepDescription,
                                                image: selectedImage,
@@ -60,11 +60,6 @@ struct AddStepView: View {
                         })
                         .store(in: &cancellables)
                 }
-                .frame(height: 44)
-                .frame(maxWidth: .infinity)
-                .accentColor(Color.white)
-                .background(Color.primary)
-                .cornerRadius(5)
                 .disabled(stepDescription.isEmpty)
 
                 Spacer()
