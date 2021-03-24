@@ -11,17 +11,25 @@ struct ProjectsListView: View {
     @ObservedObject var viewModel: ProjectsListViewModel
     @State private var showAddProjectView = false
 
+    init(viewModel: ProjectsListViewModel) {
+        UITableView.appearance().backgroundColor = .clear
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         NavigationView {
-            VStack(spacing: 25) {
+            List {
                 ForEach(viewModel.projects) { project in
                     NavigationLink(destination: ProjectView().environmentObject(project)) {
                         ProjectListItemView(project: project)
                     }
                 }
+                .onDelete(perform: { indexSet in
+                    deleteProject(indexSet: indexSet)
+                })
+
                 Spacer()
             }
-            .padding()
             .navigationTitle("PaintHammer")
             .navigationBarItems(trailing: Button("Create Project") {
                 showAddProjectView.toggle()
@@ -34,6 +42,12 @@ struct ProjectsListView: View {
                 viewModel.loadProjects()
             }
         }
+    }
+
+    private func deleteProject(indexSet: IndexSet) {
+        let index = indexSet.first!
+        let project = viewModel.projects[index]
+        viewModel.deleteProject(project, atIndex: index)
     }
 }
 

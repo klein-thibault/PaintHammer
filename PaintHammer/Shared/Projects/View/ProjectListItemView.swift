@@ -30,7 +30,6 @@ struct ProjectListItemView: View {
                 .background(Color.black.opacity(0.7))
         }
         .cornerRadius(20)
-        .shadow(radius: 10)
     }
 }
 

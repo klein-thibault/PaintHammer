@@ -32,6 +32,27 @@ final class ProjectsListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
+    func deleteProject(_ project: Project, atIndex index: IndexSet.Element) {
+        let url = URL(string: "http://127.0.0.1:8080")!
+        let request = HTTPRequest(baseURL: url,
+                                  path: "/projects/\(project.id.uuidString)",
+                                  method: .DELETE,
+                                  isAuthenticated: true)
+
+        projects.remove(at: index)
+
+        client.performRequest(request)
+            .flatMap { _ in
+                return self.fetchAllProjects()
+            }
+            .sink { result in
+
+            } receiveValue: { projects in
+                self.projects = projects
+            }
+            .store(in: &cancellables)
+    }
+
     func createProject(name: String, image: PHImage?) -> AnyPublisher<[Project], Error> {
         return createProject(name: name)
             .flatMap { project -> AnyPublisher<[Project], Error> in
