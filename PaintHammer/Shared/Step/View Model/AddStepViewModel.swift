@@ -28,7 +28,7 @@ final class AddStepViewModel: ObservableObject {
                         // add delay to give enough time for AWS lambda to trigger
                         .delay(for: .seconds(3), scheduler: RunLoop.main)
                         .flatMap { _ in
-                            return self.getProjectData(project)
+                            return self.getProjectDataWithImage(project)
                         }
                         .eraseToAnyPublisher()
                 } else {
@@ -85,7 +85,7 @@ final class AddStepViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    private func getProjectData(_ project: Project) -> AnyPublisher<Project, Error> {
+    private func getProjectDataWithImage(_ project: Project, retryCount: Int = 0) -> AnyPublisher<Project, Error> {
         let url = URL(string: "http://127.0.0.1:8080")!
         let request = HTTPRequest(baseURL: url,
                                   path: "/projects/\(project.id.uuidString)",
@@ -94,6 +94,19 @@ final class AddStepViewModel: ObservableObject {
 
         return client.performRequest(request)
             .decode(type: Project.self, decoder: JSONDecoder())
+            .flatMap { project -> AnyPublisher<Project, Error> in
+                // Image was not updated yet, retry the call
+                if let lastStep = project.steps.last, lastStep.image == nil, retryCount < 20 {
+                    let newCount = retryCount + 1
+                    return self.getProjectDataWithImage(project, retryCount: newCount)
+                        .debounce(for: 1, scheduler: RunLoop.main)
+                        .eraseToAnyPublisher()
+                }
+
+                return Just(project)
+                    .mapError { _ in PaintHammerError.invalidState }
+                    .eraseToAnyPublisher()
+            }
             .eraseToAnyPublisher()
     }
 }
