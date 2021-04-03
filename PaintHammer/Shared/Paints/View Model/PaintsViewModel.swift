@@ -6,17 +6,19 @@
 //
 
 import Combine
+import Environment
 import Foundation
 import Models
 import Networking
 
 final class PaintsViewModel: ObservableObject {
     @Published var availablePaints: [String: [Paint]] = [:]
+    var appEnvironment: AppEnvironment!
     var cancellables = Set<AnyCancellable>()
     let client = APIClient()
 
     func loadAvailablePaints() {
-        let url = URL(string: "http://127.0.0.1:8080")!
+        let url = appEnvironment.backendEnvironment.url
         let request = HTTPRequest(baseURL: url,
                                   path: "/paints",
                                   method: .GET,

@@ -6,12 +6,18 @@
 //
 
 import Combine
+import Environment
 import Foundation
 import Models
 import Networking
 
 struct ImageUploader {
     let client = APIClient()
+    var appEnvironment: AppEnvironment
+
+    init(appEnvironment: AppEnvironment) {
+        self.appEnvironment = appEnvironment
+    }
 
     func generateUploadURLForProject(project: Project, image: PHImage) -> AnyPublisher<UploadImageURL, Error> {
         let body = [
@@ -52,8 +58,7 @@ struct ImageUploader {
     }
 
     private func generateUploadURL(body: [String: Any]) -> AnyPublisher<UploadImageURL, Error> {
-        let url = URL(string: "http://127.0.0.1:8080")!
-
+        let url = appEnvironment.backendEnvironment.url
         let request = HTTPRequest(baseURL: url,
                                   path: "/images",
                                   method: .POST,

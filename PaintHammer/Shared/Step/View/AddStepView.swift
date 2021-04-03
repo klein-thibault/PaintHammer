@@ -6,10 +6,12 @@
 //
 
 import Combine
+import Environment
 import Models
 import SwiftUI
 
 struct AddStepView: View {
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @EnvironmentObject var project: Project
     var viewModel = AddStepViewModel()
     
@@ -68,6 +70,9 @@ struct AddStepView: View {
             .navigationTitle("Add a step")
             .navigationBarItems(trailing: Button("Done") {
                 showAddStepView = false
+            })
+            .onAppear(perform: {
+                viewModel.appEnvironment = appEnvironment
             })
         }
     }

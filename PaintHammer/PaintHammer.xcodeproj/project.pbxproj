@@ -54,6 +54,11 @@
 		8EDDB3F2260AA5F600486957 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB3F0260AA5F600486957 /* ImageUploader.swift */; };
 		8EDDB3F8260AB2D600486957 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB3F7260AB2D600486957 /* PrimaryButton.swift */; };
 		8EDDB3F9260AB2D600486957 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDDB3F7260AB2D600486957 /* PrimaryButton.swift */; };
+		8EDDB404260F8A3500486957 /* Environment in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDDB403260F8A3500486957 /* Environment */; };
+		8EDDB406260F8A3C00486957 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDDB405260F8A3C00486957 /* Networking */; };
+		8EDDB408260F8A4000486957 /* Environment in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDDB407260F8A4000486957 /* Environment */; };
+		8EDDB4132613E1F400486957 /* LocalStore in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDDB4122613E1F400486957 /* LocalStore */; };
+		8EDDB4152613E1FA00486957 /* LocalStore in Frameworks */ = {isa = PBXBuildFile; productRef = 8EDDB4142613E1FA00486957 /* LocalStore */; };
 		8EEA5E6025E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6125E5BEE300E8E78F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */; };
 		8EEA5E6B25E5C5B400E8E78F /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */; };
@@ -116,6 +121,8 @@
 		8ED53F2E26017F0200451796 /* AddStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepViewModel.swift; sourceTree = "<group>"; };
 		8EDDB3F0260AA5F600486957 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		8EDDB3F7260AB2D600486957 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		8EDDB3FE260F8A2700486957 /* Environment */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Environment; path = ../Environment; sourceTree = "<group>"; };
+		8EDDB40D2613E1DC00486957 /* LocalStore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LocalStore; path = ../LocalStore; sourceTree = "<group>"; };
 		8EEA5E5F25E5BEE300E8E78F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		8EEA5E6A25E5C5B400E8E78F /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
 		8EEA5E7225E5C7E100E8E78F /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -127,6 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED53F0C25F2FD9400451796 /* Networking in Frameworks */,
+				8EDDB404260F8A3500486957 /* Environment in Frameworks */,
+				8EDDB4132613E1F400486957 /* LocalStore in Frameworks */,
 				8E36E15525E19A8600ADC303 /* Models in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +144,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDDB406260F8A3C00486957 /* Networking in Frameworks */,
+				8EDDB408260F8A4000486957 /* Environment in Frameworks */,
+				8EDDB4152613E1FA00486957 /* LocalStore in Frameworks */,
 				8E36E15725E19A8D00ADC303 /* Models in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,15 +171,17 @@
 		8E36E10225E199DA00ADC303 = {
 			isa = PBXGroup;
 			children = (
-				8ED53EC025F2FC1200451796 /* Networking */,
+				8EDDB3FE260F8A2700486957 /* Environment */,
+				8EDDB40D2613E1DC00486957 /* LocalStore */,
 				8E36E14E25E19A5100ADC303 /* Models */,
-				8E36E10725E199DB00ADC303 /* Shared */,
+				8ED53EC025F2FC1200451796 /* Networking */,
+				8E36E15325E19A8600ADC303 /* Frameworks */,
 				8E36E11125E199DC00ADC303 /* iOS */,
 				8E36E11825E199DC00ADC303 /* macOS */,
+				8E36E11025E199DC00ADC303 /* Products */,
+				8E36E10725E199DB00ADC303 /* Shared */,
 				8E36E12225E199DC00ADC303 /* Tests iOS */,
 				8E36E12D25E199DC00ADC303 /* Tests macOS */,
-				8E36E11025E199DC00ADC303 /* Products */,
-				8E36E15325E19A8600ADC303 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -404,6 +418,8 @@
 			packageProductDependencies = (
 				8E36E15425E19A8600ADC303 /* Models */,
 				8ED53F0B25F2FD9400451796 /* Networking */,
+				8EDDB403260F8A3500486957 /* Environment */,
+				8EDDB4122613E1F400486957 /* LocalStore */,
 			);
 			productName = "PaintHammer (iOS)";
 			productReference = 8E36E10F25E199DC00ADC303 /* PaintHammer.app */;
@@ -424,6 +440,9 @@
 			name = "PaintHammer (macOS)";
 			packageProductDependencies = (
 				8E36E15625E19A8D00ADC303 /* Models */,
+				8EDDB405260F8A3C00486957 /* Networking */,
+				8EDDB407260F8A4000486957 /* Environment */,
+				8EDDB4142613E1FA00486957 /* LocalStore */,
 			);
 			productName = "PaintHammer (macOS)";
 			productReference = 8E36E11725E199DC00ADC303 /* PaintHammer.app */;
@@ -992,6 +1011,26 @@
 		8ED53F0B25F2FD9400451796 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		8EDDB403260F8A3500486957 /* Environment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Environment;
+		};
+		8EDDB405260F8A3C00486957 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		8EDDB407260F8A4000486957 /* Environment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Environment;
+		};
+		8EDDB4122613E1F400486957 /* LocalStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalStore;
+		};
+		8EDDB4142613E1FA00486957 /* LocalStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalStore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

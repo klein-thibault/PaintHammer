@@ -5,10 +5,12 @@
 //  Created by Thibault Klein on 2/21/21.
 //
 
+import Environment
 import Models
 import SwiftUI
 
 struct PaintsView: View {
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @State private var selectedPaintBrand = 0
     @Binding var selectedPaint: Paint?
     @Environment(\.presentationMode) var presentation
@@ -43,6 +45,7 @@ struct PaintsView: View {
         }
         .padding()
         .onAppear {
+            viewModel.appEnvironment = appEnvironment
             viewModel.loadAvailablePaints()
         }
     }

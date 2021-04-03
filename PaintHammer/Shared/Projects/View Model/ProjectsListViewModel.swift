@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Environment
 import Foundation
 import Models
 import Networking
@@ -13,8 +14,8 @@ import Networking
 final class ProjectsListViewModel: ObservableObject {
     @Published var projects: [Project] = []
     var cancellables = Set<AnyCancellable>()
+    var appEnvironment: AppEnvironment!
     let client = APIClient()
-    let imageUploader = ImageUploader()
 
     func loadProjects() {
         self.fetchAllProjects()
@@ -33,7 +34,7 @@ final class ProjectsListViewModel: ObservableObject {
     }
 
     func deleteProject(_ project: Project, atIndex index: IndexSet.Element) {
-        let url = URL(string: "http://127.0.0.1:8080")!
+        let url = appEnvironment.backendEnvironment.url
         let request = HTTPRequest(baseURL: url,
                                   path: "/projects/\(project.id.uuidString)",
                                   method: .DELETE,
@@ -54,12 +55,14 @@ final class ProjectsListViewModel: ObservableObject {
     }
 
     func createProject(name: String, image: PHImage?) -> AnyPublisher<[Project], Error> {
+        let imageUploader = ImageUploader(appEnvironment: appEnvironment)
+
         return createProject(name: name)
             .flatMap { project -> AnyPublisher<[Project], Error> in
                 if let image = image {
-                    return self.imageUploader.generateUploadURLForProject(project: project, image: image)
+                    return imageUploader.generateUploadURLForProject(project: project, image: image)
                         .flatMap { uploadURL -> AnyPublisher<Data, Error> in
-                            return self.imageUploader.uploadImage(url: uploadURL.url, image: image)
+                            return imageUploader.uploadImage(url: uploadURL.url, image: image)
                         }
                         // add delay to give enough time for AWS lambda to trigger
                         .delay(for: .seconds(3), scheduler: RunLoop.main)
@@ -75,7 +78,7 @@ final class ProjectsListViewModel: ObservableObject {
     }
 
     private func createProject(name: String) -> AnyPublisher<Project, Error> {
-        let url = URL(string: "http://127.0.0.1:8080")!
+        let url = appEnvironment.backendEnvironment.url
         let body = ["name": name]
 
         let request = HTTPRequest(baseURL: url,
@@ -90,7 +93,7 @@ final class ProjectsListViewModel: ObservableObject {
     }
 
     private func fetchAllProjects() -> AnyPublisher<[Project], Error> {
-        let url = URL(string: "http://127.0.0.1:8080")!
+        let url = appEnvironment.backendEnvironment.url
         let request = HTTPRequest(baseURL: url,
                                   path: "/projects",
                                   method: .GET,

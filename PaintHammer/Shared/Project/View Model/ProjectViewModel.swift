@@ -6,16 +6,17 @@
 //
 
 import Combine
+import Environment
 import Foundation
 import Models
 import Networking
 
 final class ProjectViewModel {
     let client = APIClient()
+    var appEnvironment: AppEnvironment!
 
     func deleteStep(step: Step, fromProject project: Project) -> AnyPublisher<Project, Error> {
-        let url = URL(string: "http://127.0.0.1:8080")!
-
+        let url = appEnvironment.backendEnvironment.url
         let request = HTTPRequest(baseURL: url,
                                   path: "/projects/\(project.id.uuidString)/steps/\(step.id.uuidString)",
                                   method: .DELETE,

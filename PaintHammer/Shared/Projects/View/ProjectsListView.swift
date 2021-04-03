@@ -5,9 +5,11 @@
 //  Created by Thibault Klein on 2/20/21.
 //
 
+import Environment
 import SwiftUI
 
 struct ProjectsListView: View {
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @ObservedObject var viewModel: ProjectsListViewModel
     @State private var showAddProjectView = false
 
@@ -39,6 +41,7 @@ struct ProjectsListView: View {
                     .accentColor(Color.primary)
             }
             .onAppear {
+                viewModel.appEnvironment = appEnvironment
                 viewModel.loadProjects()
             }
         }

@@ -6,24 +6,26 @@
 //
 
 import Combine
+import Environment
 import Foundation
 import Models
 import Networking
 
 final class AddStepViewModel: ObservableObject {
     let client = APIClient()
-    let imageUploader = ImageUploader()
+    var appEnvironment: AppEnvironment!
 
     func addStepToProject(projectId: UUID,
                           description: String,
                           image: PHImage?,
                           paint: Paint?) -> AnyPublisher<Project, Error> {
+        let imageUploader = ImageUploader(appEnvironment: appEnvironment)
         return createStep(projectId: projectId, description: description, paint: paint)
             .flatMap { project -> AnyPublisher<Project, Error> in
                 if let image = image {
-                    return self.imageUploader.generateUploadURLForStep(project: project, image: image)
+                    return imageUploader.generateUploadURLForStep(project: project, image: image)
                         .flatMap { uploadURL in
-                            return self.imageUploader.uploadImage(url: uploadURL.url, image: image)
+                            return imageUploader.uploadImage(url: uploadURL.url, image: image)
                         }
                         // add delay to give enough time for AWS lambda to trigger
                         .delay(for: .seconds(3), scheduler: RunLoop.main)
@@ -43,8 +45,7 @@ final class AddStepViewModel: ObservableObject {
     private func createStep(projectId: UUID,
                             description: String,
                             paint: Paint?) -> AnyPublisher<Project, Error> {
-        let url = URL(string: "http://127.0.0.1:8080")!
-
+        let url = appEnvironment.backendEnvironment.url
         var body = ["description": description]
         if let paintId = paint?.id.uuidString {
             body["paintId"] = paintId
@@ -62,31 +63,8 @@ final class AddStepViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    private func generateUploadURLForStep(project: Project, image: PHImage) -> AnyPublisher<UploadImageURL, Error> {
-        let url = URL(string: "http://127.0.0.1:8080")!
-        let step = project.steps.last!
-        let lastIndex = project.steps.count
-
-        let body = [
-            "name": "step-\(lastIndex)-image.jpeg",
-            "type": "step",
-            "id": step.id.uuidString
-        ]
-
-        let request = HTTPRequest(baseURL: url,
-                                  path: "/images",
-                                  method: .POST,
-                                  body: body,
-                                  isAuthenticated: true)
-
-        return client
-            .performRequest(request)
-            .decode(type: UploadImageURL.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
-    }
-
     private func getProjectDataWithImage(_ project: Project, retryCount: Int = 0) -> AnyPublisher<Project, Error> {
-        let url = URL(string: "http://127.0.0.1:8080")!
+        let url = appEnvironment.backendEnvironment.url
         let request = HTTPRequest(baseURL: url,
                                   path: "/projects/\(project.id.uuidString)",
                                   method: .GET,

@@ -6,11 +6,13 @@
 //
 
 import Combine
+import Environment
 import Models
 import SwiftUI
 
 struct ProjectView: View {
     @EnvironmentObject var project: Project
+    @EnvironmentObject var appEnvironment: AppEnvironment
     @State var showAddStepView = false
     @State var cancellables = Set<AnyCancellable>()
 
@@ -33,6 +35,9 @@ struct ProjectView: View {
             AddStepView(showAddStepView: $showAddStepView)
                 .accentColor(Color.primary)
         }
+        .onAppear(perform: {
+            viewModel.appEnvironment = appEnvironment
+        })
     }
 
     private func deleteStep(indexSet: IndexSet) {
