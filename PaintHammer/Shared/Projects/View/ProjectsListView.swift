@@ -12,6 +12,7 @@ struct ProjectsListView: View {
     @EnvironmentObject var appEnvironment: AppEnvironment
     @ObservedObject var viewModel: ProjectsListViewModel
     @State private var showAddProjectView = false
+    @State private var showLoginView = false
 
     init(viewModel: ProjectsListViewModel) {
         UITableView.appearance().backgroundColor = .clear
@@ -33,12 +34,17 @@ struct ProjectsListView: View {
                 Spacer()
             }
             .navigationTitle("PaintHammer")
-            .navigationBarItems(trailing: Button("Create Project") {
+            .navigationBarItems(leading: Button("Login") {
+                showLoginView.toggle()
+            }, trailing: Button("Create Project") {
                 showAddProjectView.toggle()
             })
             .sheet(isPresented: $showAddProjectView) {
                 CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
                     .accentColor(Color.primary)
+            }
+            .sheet(isPresented: $showLoginView) {
+                LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
             }
             .onAppear {
                 viewModel.appEnvironment = appEnvironment

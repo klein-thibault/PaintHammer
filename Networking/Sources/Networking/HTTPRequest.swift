@@ -1,3 +1,4 @@
+import Environment
 import Foundation
 
 public struct HTTPRequest {
@@ -8,6 +9,7 @@ public struct HTTPRequest {
     public var headers: [String: String]?
     public var body: [String: Any]?
     public var isAuthenticated: Bool
+    public let environment: AppEnvironment
 
     public init(baseURL: URL,
                 path: String,
@@ -16,7 +18,8 @@ public struct HTTPRequest {
                 headers: [String: String]? = nil,
                 body: [String: Any]? = nil,
                 isAuthenticated: Bool,
-                timeZone: TimeZone = TimeZone.current) {
+                timeZone: TimeZone = TimeZone.current,
+                environment: AppEnvironment = AppEnvironment()) {
         self.baseURL = baseURL
         self.path = path
         self.method = method
@@ -24,6 +27,7 @@ public struct HTTPRequest {
         self.headers = headers
         self.body = body
         self.isAuthenticated = isAuthenticated
+        self.environment = environment
     }
 }
 
@@ -47,6 +51,11 @@ extension HTTPRequest {
             for header in headers {
                 request.setValue(header.value, forHTTPHeaderField: header.key)
             }
+        }
+
+        if isAuthenticated, let token = environment.authToken {
+            let bearerToken = "Bearer \(token)"
+            request.setValue(bearerToken, forHTTPHeaderField: "Authorization")
         }
 
         if let body = body {
