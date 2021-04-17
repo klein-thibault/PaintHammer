@@ -54,6 +54,11 @@ struct LoginView: View {
             .onAppear {
                 viewModel.appEnvironment = appEnvironment
             }
+            .onReceive(viewModel.viewDismissalModePublisher, perform: { _ in
+                if viewModel.token != nil {
+                    showLoginView = false
+                }
+            })
         }
     }
 }

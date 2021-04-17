@@ -53,8 +53,8 @@ extension HTTPRequest {
             }
         }
 
-        if isAuthenticated, let token = environment.authToken {
-            let bearerToken = "Bearer \(token)"
+        if isAuthenticated, !environment.authToken.isEmpty {
+            let bearerToken = "Bearer \(environment.authToken)"
             request.setValue(bearerToken, forHTTPHeaderField: "Authorization")
         }
 

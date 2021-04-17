@@ -17,6 +17,10 @@ final class ProjectsListViewModel: ObservableObject {
     var appEnvironment: AppEnvironment!
     let client = APIClient()
 
+    func clearProjects() {
+        projects.removeAll()
+    }
+
     func loadProjects() {
         self.fetchAllProjects()
             .sink { result in

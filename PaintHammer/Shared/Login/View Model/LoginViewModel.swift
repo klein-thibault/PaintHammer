@@ -12,9 +12,13 @@ import Models
 import Networking
 
 final class LoginViewModel: ObservableObject {
+    var viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
     @Published var token: String? {
         didSet {
-            appEnvironment.authToken = token
+            if let token = token {
+                appEnvironment.authToken = token
+                viewDismissalModePublisher.send(true)
+            }
         }
     }
     var appEnvironment: AppEnvironment!
@@ -38,6 +42,7 @@ final class LoginViewModel: ObservableObject {
             .sink { result in
             } receiveValue: { token in
                 self.token = token.token
+                self.objectWillChange.send()
             }
             .store(in: &cancellables)
     }

@@ -14,6 +14,19 @@ struct ProjectsListView: View {
     @State private var showAddProjectView = false
     @State private var showLoginView = false
 
+    var navigationBarItemLeadingButton: some View {
+        if appEnvironment.isLoggedIn {
+            return Button("Logout") {
+                appEnvironment.authToken = ""
+                viewModel.clearProjects()
+            }
+        } else {
+            return Button("Login") {
+                showLoginView.toggle()
+            }
+        }
+    }
+
     init(viewModel: ProjectsListViewModel) {
         UITableView.appearance().backgroundColor = .clear
         self.viewModel = viewModel
@@ -34,22 +47,31 @@ struct ProjectsListView: View {
                 Spacer()
             }
             .navigationTitle("PaintHammer")
-            .navigationBarItems(leading: Button("Login") {
-                showLoginView.toggle()
-            }, trailing: Button("Create Project") {
-                showAddProjectView.toggle()
-            })
+            .navigationBarItems(leading: navigationBarItemLeadingButton,
+                                trailing: Group {
+                                    if appEnvironment.isLoggedIn {
+                                        Button("Create Project") {
+                                            showAddProjectView.toggle()
+                                        }
+                                    }
+                                }
+            )
+            .sheet(isPresented: $showLoginView) {
+                LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
+            }
             .sheet(isPresented: $showAddProjectView) {
                 CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
                     .accentColor(Color.primary)
-            }
-            .sheet(isPresented: $showLoginView) {
-                LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
             }
             .onAppear {
                 viewModel.appEnvironment = appEnvironment
                 viewModel.loadProjects()
             }
+            .onChange(of: showLoginView, perform: { value in
+                if !showLoginView {
+                    viewModel.loadProjects()
+                }
+            })
         }
     }
 
