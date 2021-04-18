@@ -27,6 +27,7 @@ final class ProjectsListViewModel: ObservableObject {
                 switch result {
                 case .failure(let error):
                     print("Error fetching projects: \(error)")
+                    self.appEnvironment.authToken = ""
 
                 case .finished:
                     break

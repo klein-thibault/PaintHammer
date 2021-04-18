@@ -11,50 +11,44 @@ import SwiftUI
 
 struct PaintsView: View {
     @EnvironmentObject var appEnvironment: AppEnvironment
-    @State private var selectedPaintBrand = 0
-    @Binding var selectedPaint: Paint?
     @Environment(\.presentationMode) var presentation
     @ObservedObject var viewModel: PaintsViewModel
 
-    var paintBrands = ["Citadel", "Scale75"]
+    @Binding var rootIsActive: Bool
+    @Binding var selectedPaint: Paint?
+
+    @State private var selectedPaintBrand = 0
+
+    let paintBrand: String
+
     var body: some View {
-        VStack {
-            Picker(selection: $selectedPaintBrand, label: Text("Paint Brand")) {
-                ForEach(0..<paintBrands.count) {
-                    Text(paintBrands[$0])
-                }
+        List {
+            ForEach(viewModel.paints) { paint in
+                Button(action: {
+                    selectedPaint = paint
+                    // Pop back to the add step view
+                    rootIsActive = false
+                }, label: {
+                    PaintView(paint: paint)
+                })
             }
-            .pickerStyle(SegmentedPickerStyle())
-
-            List {
-                let selectedBrand = paintBrands[selectedPaintBrand]
-                if let selectedPaints = viewModel.availablePaints[selectedBrand] {
-                    ForEach(selectedPaints) { paint in
-                        Button(action: {
-                            selectedPaint = paint
-                            // Pop back to the add step view
-                            presentation.wrappedValue.dismiss()
-                        }, label: {
-                            PaintView(paint: paint)
-                        })
-                    }
-                }
-            }
-
-            Spacer()
         }
         .padding()
         .onAppear {
             viewModel.appEnvironment = appEnvironment
-            viewModel.loadAvailablePaints()
+            viewModel.loadPaintsForBrand(paintBrand)
         }
     }
 }
 
 struct PaintsView_Previews: PreviewProvider {
     @State static var selectedPaint: Paint? = nil
+    @State static var rootIsActive: Bool = false
 
     static var previews: some View {
-        PaintsView(selectedPaint: $selectedPaint, viewModel: PaintsViewModel())
+        PaintsView(viewModel: PaintsViewModel(),
+                   rootIsActive: $rootIsActive,
+                   selectedPaint: $selectedPaint,
+                   paintBrand: "Citadel")
     }
 }

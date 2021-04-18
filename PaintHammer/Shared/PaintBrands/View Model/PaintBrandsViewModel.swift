@@ -1,42 +1,40 @@
 //
-//  PaintsViewModel.swift
-//  PaintHammer (iOS)
+//  PaintBrandsViewModel.swift
+//  PaintHammer
 //
-//  Created by Thibault Klein on 3/5/21.
+//  Created by Thibault Klein on 4/17/21.
 //
 
 import Combine
 import Environment
 import Foundation
-import Models
 import Networking
 
-final class PaintsViewModel: ObservableObject {
-    @Published var paints: [Paint] = []
+final class PaintBrandsViewModel: ObservableObject {
+    @Published var paintBrands: [String] = []
     var appEnvironment: AppEnvironment!
     var cancellables = Set<AnyCancellable>()
     let client = APIClient()
 
-    func loadPaintsForBrand(_ brand: String) {
+    func loadAllAvailablePaintBrands() {
         let url = appEnvironment.backendEnvironment.url
         let request = HTTPRequest(baseURL: url,
-                                  path: "/paints",
+                                  path: "/paints/brands",
                                   method: .GET,
-                                  queryParameters: ["brand": brand],
                                   isAuthenticated: false)
 
         client.performRequest(request)
-            .decode(type: [Paint].self, decoder: JSONDecoder())
+            .decode(type: [String].self, decoder: JSONDecoder())
             .sink { result in
                 switch result {
                 case .failure(let error):
-                    print("Error fetching paints: \(error)")
+                    print("Error fetching paint brands: \(error)")
 
                 case .finished:
                     break
                 }
-            } receiveValue: { paints in
-                self.paints = paints
+            } receiveValue: { paintBrands in
+                self.paintBrands = paintBrands
             }
             .store(in: &cancellables)
     }
