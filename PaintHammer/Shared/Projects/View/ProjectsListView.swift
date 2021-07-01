@@ -56,12 +56,12 @@ struct ProjectsListView: View {
                                     }
                                 }
             )
+            .sheet(isPresented: $showLoginView) {
+                LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
+            }
             .sheet(isPresented: $showAddProjectView) {
                 CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
                     .accentColor(Color.primary)
-            }
-            .sheet(isPresented: $showLoginView) {
-                LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
             }
             .onAppear {
                 viewModel.appEnvironment = appEnvironment

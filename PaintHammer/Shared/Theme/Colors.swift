@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Models
 import SwiftUI
 
 extension Color {
-    static let primary = Color(UIColor(hexString: "#FF893C"))
+    static let primary = Color(PHColor(hexString: "#FF893C"))
 }
