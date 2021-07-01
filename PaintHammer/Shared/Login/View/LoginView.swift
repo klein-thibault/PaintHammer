@@ -18,14 +18,19 @@ struct LoginView: View {
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 10) {
-                Text("Login to your PaintHammer account")
+            VStack(spacing: 25) {
                 TextField("Email", text: $email)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
+                    .padding()
+                    .background(Color.lightGray)
+                    .cornerRadius(5.0)
                 SecureField("Password", text: $password)
                     .textContentType(.password)
+                    .padding()
+                    .background(Color.lightGray)
+                    .cornerRadius(5.0)
 
                 HStack {
                     Group {
@@ -33,6 +38,10 @@ struct LoginView: View {
                             self.viewModel.login(email: self.email, password: self.password)
                         }) {
                             Text("Login")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.primary)
+                                .cornerRadius(5.0)
                         }
                     }
                     .disabled(!viewModel.areCredentialsValid(email: email, password: password))
@@ -43,9 +52,15 @@ struct LoginView: View {
                         self.viewModel.createAccount(email: self.email, password: self.password)
                     }) {
                         Text("Create Account")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.primary)
+                            .cornerRadius(5.0)
                     }
                     .disabled(!viewModel.areCredentialsValid(email: email, password: password))
                 }
+
+                Spacer()
             }
             .padding()
             .navigationBarItems(trailing: Button("Cancel") {

@@ -34,44 +34,53 @@ struct ProjectsListView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.projects) { project in
-                    NavigationLink(destination: ProjectView().environmentObject(project)) {
-                        ProjectListItemView(project: project)
+            if (appEnvironment.isLoggedIn) {
+                List {
+                    ForEach(viewModel.projects) { project in
+                        NavigationLink(destination: ProjectView().environmentObject(project)) {
+                            ProjectListItemView(project: project)
+                        }
                     }
-                }
-                .onDelete(perform: { indexSet in
-                    deleteProject(indexSet: indexSet)
-                })
+                    .onDelete(perform: { indexSet in
+                        deleteProject(indexSet: indexSet)
+                    })
 
-                Spacer()
-            }
-            .navigationTitle("PaintHammer")
-            .navigationBarItems(leading: navigationBarItemLeadingButton,
-                                trailing: Group {
-                                    if appEnvironment.isLoggedIn {
-                                        Button("Create Project") {
-                                            showAddProjectView.toggle()
+                    Spacer()
+                }
+                .navigationTitle("PaintHammer")
+                .navigationBarItems(leading: navigationBarItemLeadingButton,
+                                    trailing: Group {
+                                        if appEnvironment.isLoggedIn {
+                                            Button("Create Project") {
+                                                showAddProjectView.toggle()
+                                            }
                                         }
                                     }
-                                }
-            )
-            .sheet(isPresented: $showLoginView) {
-                LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
-            }
-            .sheet(isPresented: $showAddProjectView) {
-                CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
-                    .accentColor(Color.primary)
-            }
-            .onAppear {
-                viewModel.appEnvironment = appEnvironment
-                viewModel.loadProjects()
-            }
-            .onChange(of: showLoginView, perform: { value in
-                if !showLoginView {
+                )
+                .sheet(isPresented: $showLoginView) {
+                    LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
+                }
+                .sheet(isPresented: $showAddProjectView) {
+                    CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
+                        .accentColor(Color.primary)
+                }
+                .onAppear {
+                    viewModel.appEnvironment = appEnvironment
                     viewModel.loadProjects()
                 }
-            })
+                .onChange(of: showLoginView, perform: { value in
+                    if !showLoginView {
+                        viewModel.loadProjects()
+                    }
+                })
+            } else {
+                Text("Please login")
+                    .navigationTitle("PaintHammer")
+                    .navigationBarItems(leading: navigationBarItemLeadingButton)
+                    .sheet(isPresented: $showLoginView) {
+                        LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
+                    }
+            }
         }
     }
 
