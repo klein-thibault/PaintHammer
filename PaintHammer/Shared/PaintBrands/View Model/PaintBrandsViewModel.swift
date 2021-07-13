@@ -14,7 +14,9 @@ final class PaintBrandsViewModel: ObservableObject {
     @Published var paintBrands: [String] = []
     var appEnvironment: AppEnvironment!
     var cancellables = Set<AnyCancellable>()
-    let client = APIClient()
+    lazy var client = {
+        return APIClient(appEnvironment: self.appEnvironment)
+    }()
 
     func loadAllAvailablePaintBrands() {
         let url = appEnvironment.backendEnvironment.url

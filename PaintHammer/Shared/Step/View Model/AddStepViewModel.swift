@@ -12,7 +12,9 @@ import Models
 import Networking
 
 final class AddStepViewModel: ObservableObject {
-    let client = APIClient()
+    lazy var client = {
+        return APIClient(appEnvironment: self.appEnvironment)
+    }()
     var appEnvironment: AppEnvironment!
 
     func addStepToProject(projectId: UUID,

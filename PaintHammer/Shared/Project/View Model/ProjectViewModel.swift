@@ -12,7 +12,9 @@ import Models
 import Networking
 
 final class ProjectViewModel {
-    let client = APIClient()
+    lazy var client = {
+        return APIClient(appEnvironment: self.appEnvironment)
+    }()
     var appEnvironment: AppEnvironment!
 
     func deleteStep(step: Step, fromProject project: Project) -> AnyPublisher<Project, Error> {

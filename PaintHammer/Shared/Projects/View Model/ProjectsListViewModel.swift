@@ -15,7 +15,9 @@ final class ProjectsListViewModel: ObservableObject {
     @Published var projects: [Project] = []
     var cancellables = Set<AnyCancellable>()
     var appEnvironment: AppEnvironment!
-    let client = APIClient()
+    lazy var client = {
+        return APIClient(appEnvironment: self.appEnvironment)
+    }()
 
     func clearProjects() {
         projects.removeAll()

@@ -68,11 +68,11 @@ struct ProjectsListView: View {
                     viewModel.appEnvironment = appEnvironment
                     viewModel.loadProjects()
                 }
-                .onChange(of: showLoginView, perform: { value in
+                .onChange(of: showLoginView) { value in
                     if !showLoginView {
                         viewModel.loadProjects()
                     }
-                })
+                }
             } else {
                 Text("Please login")
                     .navigationTitle("PaintHammer")

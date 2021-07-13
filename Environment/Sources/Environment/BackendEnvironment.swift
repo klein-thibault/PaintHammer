@@ -1,6 +1,6 @@
 import Foundation
 
-public enum BackendEnvironment {
+public enum BackendEnvironment: Int {
     case local, staging, production
 
     public var url: URL {

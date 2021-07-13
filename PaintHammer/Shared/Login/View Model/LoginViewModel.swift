@@ -22,7 +22,9 @@ final class LoginViewModel: ObservableObject {
         }
     }
     var appEnvironment: AppEnvironment!
-    let client = APIClient()
+    lazy var client = {
+        return APIClient(appEnvironment: self.appEnvironment)
+    }()
     var cancellables = Set<AnyCancellable>()
 
     func login(email: String, password: String) {
@@ -40,6 +42,7 @@ final class LoginViewModel: ObservableObject {
         client.performRequest(request)
             .decode(type: AuthToken.self, decoder: JSONDecoder())
             .sink { result in
+                print(result)
             } receiveValue: { token in
                 self.token = token.token
                 self.objectWillChange.send()
@@ -62,6 +65,7 @@ final class LoginViewModel: ObservableObject {
         client.performRequest(request)
             .decode(type: AuthToken.self, decoder: JSONDecoder())
             .sink { result in
+                print(result)
             } receiveValue: { token in
                 self.token = token.token
             }

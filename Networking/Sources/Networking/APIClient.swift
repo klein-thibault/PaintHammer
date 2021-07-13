@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Environment
 import Foundation
 
 public enum PaintHammerError: Error {
@@ -14,15 +15,24 @@ public enum PaintHammerError: Error {
 }
 
 public struct APIClient {
-    public init() { }
+    private let appEnvironment: AppEnvironment
+
+    public init(appEnvironment: AppEnvironment) {
+        self.appEnvironment = appEnvironment
+    }
 
     public func performRequest(_ request: HTTPRequest) -> AnyPublisher<Data, Error> {
         return URLSession.shared
             .dataTaskPublisher(for: request.urlRequest)
             .tryMap { data, response in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                guard let response = response as? HTTPURLResponse else {
                     throw URLError(.badServerResponse)
                 }
+
+                if response.statusCode == 401 {
+                    appEnvironment.authToken = ""
+                }
+
                 return data
             }
             .receive(on: DispatchQueue.main)

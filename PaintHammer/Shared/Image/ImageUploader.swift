@@ -12,11 +12,12 @@ import Models
 import Networking
 
 struct ImageUploader {
-    let client = APIClient()
+    let client: APIClient
     var appEnvironment: AppEnvironment
 
     init(appEnvironment: AppEnvironment) {
         self.appEnvironment = appEnvironment
+        self.client = APIClient(appEnvironment: appEnvironment)
     }
 
     func generateUploadURLForProject(project: Project, image: PHImage) -> AnyPublisher<UploadImageURL, Error> {
