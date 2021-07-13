@@ -64,14 +64,14 @@ struct ProjectsListView: View {
                     CreateProjectView(showAddProjectView: $showAddProjectView, viewModel: viewModel)
                         .accentColor(Color.primary)
                 }
-                .onAppear {
-                    viewModel.appEnvironment = appEnvironment
-                    viewModel.loadProjects()
-                }
                 .onChange(of: showLoginView) { value in
                     if !showLoginView {
                         viewModel.loadProjects()
                     }
+                }
+                .onAppear {
+                    viewModel.appEnvironment = appEnvironment
+                    viewModel.loadProjects()
                 }
             } else {
                 Text("Please login")
@@ -79,6 +79,14 @@ struct ProjectsListView: View {
                     .navigationBarItems(leading: navigationBarItemLeadingButton)
                     .sheet(isPresented: $showLoginView) {
                         LoginView(showLoginView: $showLoginView, viewModel: LoginViewModel())
+                    }
+                    .onChange(of: showLoginView) { value in
+                        if !showLoginView {
+                            viewModel.loadProjects()
+                        }
+                    }
+                    .onAppear {
+                        viewModel.appEnvironment = appEnvironment
                     }
             }
         }

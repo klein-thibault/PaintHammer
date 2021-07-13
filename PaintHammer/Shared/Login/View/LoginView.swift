@@ -63,6 +63,7 @@ struct LoginView: View {
                 Spacer()
             }
             .padding()
+            .navigationTitle("Login")
             .navigationBarItems(trailing: Button("Cancel") {
                 showLoginView = false
             })
