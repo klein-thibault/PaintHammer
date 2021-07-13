@@ -33,7 +33,8 @@ struct PaintsView: View {
                 })
             }
         }
-        .padding()
+        .padding(.top, 0)
+        .navigationTitle(paintBrand)
         .onAppear {
             viewModel.appEnvironment = appEnvironment
             viewModel.loadPaintsForBrand(paintBrand)

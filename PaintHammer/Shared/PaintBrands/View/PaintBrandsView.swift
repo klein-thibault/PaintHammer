@@ -30,7 +30,8 @@ struct PaintBrandsView: View {
             }
             Spacer()
         }
-        .padding()
+        .padding(.top, 0)
+        .navigationTitle("Paint Brands")
         .onAppear {
             viewModel.appEnvironment = appEnvironment
             viewModel.loadAllAvailablePaintBrands()
