@@ -42,4 +42,10 @@ final class PaintsViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
+
+    func filterPaints(by searchText: String) -> [Paint] {
+        return searchText.isEmpty
+            ? paints
+            : paints.filter { $0.name.contains(searchText) }
+    }
 }

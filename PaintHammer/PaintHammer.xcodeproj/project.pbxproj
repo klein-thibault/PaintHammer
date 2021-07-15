@@ -49,6 +49,10 @@
 		8E75CF68262BA96600D2CE40 /* PaintBrandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75CF66262BA96600D2CE40 /* PaintBrandsView.swift */; };
 		8E75CF72262BA9CB00D2CE40 /* PaintBrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75CF71262BA9CB00D2CE40 /* PaintBrandsViewModel.swift */; };
 		8E75CF73262BA9CB00D2CE40 /* PaintBrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75CF71262BA9CB00D2CE40 /* PaintBrandsViewModel.swift */; };
+		8EB64D5D269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB64D5C269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift */; };
+		8EB64D5E269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB64D5C269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift */; };
+		8EB64D69269FEA29007E79D1 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB64D68269FEA29007E79D1 /* SearchBarView.swift */; };
+		8EB64D6A269FEA29007E79D1 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB64D68269FEA29007E79D1 /* SearchBarView.swift */; };
 		8ED53EB125F2FB8100451796 /* PaintsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */; };
 		8ED53EBA25F2FB8400451796 /* PaintsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */; };
 		8ED53F0C25F2FD9400451796 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED53F0B25F2FD9400451796 /* Networking */; };
@@ -126,6 +130,8 @@
 		8E71751C261FDE3C005276E2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8E75CF66262BA96600D2CE40 /* PaintBrandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintBrandsView.swift; sourceTree = "<group>"; };
 		8E75CF71262BA9CB00D2CE40 /* PaintBrandsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintBrandsViewModel.swift; sourceTree = "<group>"; };
+		8EB64D5C269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignKeyboardOnDragGesture.swift; sourceTree = "<group>"; };
+		8EB64D68269FEA29007E79D1 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		8ED53EB025F2FB8100451796 /* PaintsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintsViewModel.swift; sourceTree = "<group>"; };
 		8ED53EC025F2FC1200451796 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = ../Networking; sourceTree = "<group>"; };
 		8ED53F1526006EDF00451796 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -200,11 +206,13 @@
 		8E36E10725E199DB00ADC303 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */,
 				8E36E10A25E199DB00ADC303 /* Assets.xcassets */,
+				8EB64D67269FEA18007E79D1 /* Design Components */,
+				8EB64D5B269FE996007E79D1 /* Helpers */,
 				8EEA5E7125E5C7D000E8E78F /* Image */,
 				8E717510261FDB3B005276E2 /* Login */,
 				8E75CF63262BA93A00D2CE40 /* PaintBrands */,
+				8E36E10825E199DB00ADC303 /* PaintHammerApp.swift */,
 				8E6A45A725E2F55E0026F3BC /* Paints */,
 				8E36E16C25E1AB6F00ADC303 /* Project */,
 				8E36E16B25E1AB5D00ADC303 /* Projects */,
@@ -405,6 +413,22 @@
 				8E75CF66262BA96600D2CE40 /* PaintBrandsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8EB64D5B269FE996007E79D1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8EB64D5C269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8EB64D67269FEA18007E79D1 /* Design Components */ = {
+			isa = PBXGroup;
+			children = (
+				8EB64D68269FEA29007E79D1 /* SearchBarView.swift */,
+			);
+			path = "Design Components";
 			sourceTree = "<group>";
 		};
 		8ED53EAE25F2FB6D00451796 /* View */ = {
@@ -637,6 +661,7 @@
 				8E36E16525E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
 				8E6A45B425E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8EDDB3F1260AA5F600486957 /* ImageUploader.swift in Sources */,
+				8EB64D5D269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift in Sources */,
 				8E36E13325E199DC00ADC303 /* ProjectsListView.swift in Sources */,
 				8E67D8F6260311040085BA75 /* ProjectViewModel.swift in Sources */,
 				8E717512261FDB51005276E2 /* LoginView.swift in Sources */,
@@ -649,6 +674,7 @@
 				8E71751D261FDE3C005276E2 /* LoginViewModel.swift in Sources */,
 				8E6A45BB25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3525E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
+				8EB64D69269FEA29007E79D1 /* SearchBarView.swift in Sources */,
 				8E6A457825E2D4490026F3BC /* Image+PHImage.swift in Sources */,
 				8EEA5E7325E5C7E100E8E78F /* ImageSelectionView.swift in Sources */,
 				8ED53F1626006EDF00451796 /* ImageLoader.swift in Sources */,
@@ -671,6 +697,7 @@
 				8E36E16625E19EB600ADC303 /* ProjectListItemView.swift in Sources */,
 				8E6A45B525E2FBBD0026F3BC /* PaintCircleColorView.swift in Sources */,
 				8EDDB3F2260AA5F600486957 /* ImageUploader.swift in Sources */,
+				8EB64D5E269FE9AA007E79D1 /* ResignKeyboardOnDragGesture.swift in Sources */,
 				8E36E13425E199DC00ADC303 /* ProjectsListView.swift in Sources */,
 				8E67D8F7260311040085BA75 /* ProjectViewModel.swift in Sources */,
 				8E717513261FDB51005276E2 /* LoginView.swift in Sources */,
@@ -683,6 +710,7 @@
 				8E71751E261FDE3C005276E2 /* LoginViewModel.swift in Sources */,
 				8E6A45BC25E2FDC20026F3BC /* PaintView.swift in Sources */,
 				8E525C3625E2CD9500E0A9C0 /* ProjectsListViewModel.swift in Sources */,
+				8EB64D6A269FEA29007E79D1 /* SearchBarView.swift in Sources */,
 				8E6A457E25E2D48D0026F3BC /* Image+PHImage.swift in Sources */,
 				8EEA5E7425E5C7E100E8E78F /* ImageSelectionView.swift in Sources */,
 				8ED53F1726006EE000451796 /* ImageLoader.swift in Sources */,

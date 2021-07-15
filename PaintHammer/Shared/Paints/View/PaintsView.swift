@@ -18,22 +18,29 @@ struct PaintsView: View {
     @Binding var selectedPaint: Paint?
 
     @State private var selectedPaintBrand = 0
+    @State private var searchText = ""
 
     let paintBrand: String
 
     var body: some View {
-        List {
-            ForEach(viewModel.paints) { paint in
-                Button(action: {
-                    selectedPaint = paint
-                    // Pop back to the add step view
-                    rootIsActive = false
-                }, label: {
-                    PaintView(paint: paint)
-                })
+        VStack {
+            SearchBarView(searchText: $searchText)
+
+            List {
+                ForEach(viewModel.filterPaints(by: searchText)) { paint in
+                    Button(action: {
+                        selectedPaint = paint
+                        // Pop back to the add step view
+                        rootIsActive = false
+                    }, label: {
+                        PaintView(paint: paint)
+                    })
+                }
             }
+            .padding(.top, 0)
+            .resignKeyboardOnDragGesture()
         }
-        .padding(.top, 0)
+        .padding(.top, 10)
         .navigationTitle(paintBrand)
         .onAppear {
             viewModel.appEnvironment = appEnvironment
